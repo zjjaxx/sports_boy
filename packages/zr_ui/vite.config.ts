@@ -2,11 +2,13 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import path from "path"
 import { babel } from '@rollup/plugin-babel';
+import vueJsx from '@vitejs/plugin-vue-jsx'
 // https://vitejs.dev/config/
 const isWatch = process.env.build == "watch"
 export default defineConfig({
   plugins: [
-    vue()
+    vue(),
+    vueJsx({})
   ],
   build: {
     watch: isWatch ? {} : null,

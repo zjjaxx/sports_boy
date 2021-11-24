@@ -8,11 +8,11 @@ declare module '*.vue' {
 }
 declare module 'zr_ui'{
   import { DefineComponent } from 'vue'
-  const HelloWorld: DefineComponent<{}, {}, any>
-  const fn:()=>Promise<number>
+  const ZRow: DefineComponent<{}, {}, any>
+  const ZCol: DefineComponent<{}, {}, any>
   export {
-    fn,
-    HelloWorld
+    ZRow,
+    ZCol
   }
 } 
 
