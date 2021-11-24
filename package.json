@@ -1,0 +1,31 @@
+{
+  "name": "zr_ui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "workspaces": ["packages/*"],
+  "private":true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev":"yarn workspace website dev",
+    "build":"yarn workspace zr_ui build",
+    "build:watch":"yarn workspace zr_ui build:watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zjjaxx/zr_ui.git"
+  },
+  "keywords": [
+    "ui",
+    "library",
+    "vue3",
+    "typescript",
+    "vite"
+  ],
+  "author": "zjjaxx rufeng",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zjjaxx/zr_ui/issues"
+  },
+  "homepage": "https://github.com/zjjaxx/zr_ui#readme"
+}
