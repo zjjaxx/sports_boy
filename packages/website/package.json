@@ -8,11 +8,12 @@
   },
   "dependencies": {
     "vue": "^3.2.16",
-    "zr_ui":"1.0.0"
+    "sports_boy": "1.0.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^1.9.3",
     "typescript": "^4.4.3",
+    "unplugin-vue-components": "^0.17.2",
     "vite": "^2.6.4",
     "vue-tsc": "^0.3.0"
   }

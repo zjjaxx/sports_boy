@@ -6,7 +6,7 @@ declare module '*.vue' {
   const component: DefineComponent<{}, {}, any>
   export default component
 }
-declare module 'zr_ui'{
+declare module 'sports_boy'{
   import { DefineComponent } from 'vue'
   const ZRow: DefineComponent<{}, {}, any>
   const ZCol: DefineComponent<{}, {}, any>

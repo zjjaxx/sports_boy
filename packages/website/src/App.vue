@@ -7,6 +7,7 @@ console.log("ZCol",ZCol)
 
 <template>
   <img alt="Vue logo" src="./assets/logo.png" />
+  <test></test>
   <p>website</p>
   <ZRow>
     a

@@ -4,7 +4,7 @@ import {defineComponent} from "vue"
 export default defineComponent({
     render(){
         return (
-            <h1>z-col</h1>
+            <span class="z-col">z-col</span>
         )
     }
 })

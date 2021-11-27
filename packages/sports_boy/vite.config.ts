@@ -14,7 +14,7 @@ export default defineConfig({
     watch: isWatch ? {} : null,
     lib: {
       entry: path.resolve(__dirname, './src/main.ts'),
-      name: 'zr_ui'
+      name: 'sports_boy'
     },
     rollupOptions: {
       external: ['vue'],

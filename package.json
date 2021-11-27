@@ -1,5 +1,5 @@
 {
-  "name": "zr_ui",
+  "name": "vui",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,8 +8,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev":"yarn workspace website dev",
-    "build":"yarn workspace zr_ui build",
-    "build:watch":"yarn workspace zr_ui build:watch"
+    "build":"yarn workspace sports_boy build",
+    "build:watch":"yarn workspace sports_boy build:watch"
   },
   "repository": {
     "type": "git",
