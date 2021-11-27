@@ -1,66 +1,17 @@
-* {
-  margin: 0;
-  padding: 0;
-  outline: 0;
-  border: 0;
-  padding: 0;
-}
+/* Error: Can't find stylesheet to import.
+ *   ,
+ * 2 | @use "./zcol.scss";
+ *   | ^^^^^^^^^^^^^^^^^^
+ *   '
+ *   src/theme/index.scss 2:1  root stylesheet */
 
-.flex {
-  display: flex;
-}
-
-.flex-column {
-  flex-direction: column;
-}
-
-.flex-wrap {
-  flex-wrap: wrap;
-}
-
-.justify-between {
-  justify-content: space-between;
-}
-
-.justify-around {
-  justify-content: space-around;
-}
-
-.justify-center {
-  justify-content: center;
-}
-
-.justify-start {
-  justify-content: flex-start;
-}
-
-.justify-end {
-  justify-content: flex-end;
-}
-
-.align-start {
-  align-items: flex-start;
-}
-
-.align-center {
-  align-items: center;
-}
-
-.align-end {
-  align-items: flex-end;
-}
-
-.z-col {
-  display: inline-block;
-  width: 50px;
-  height: 50px;
-  color: #fff;
-  background-color: blue;
-}
-
-.z-row {
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
   display: block;
-}
-.z-row .test {
-  background-color: red;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Can't find stylesheet to import.\a   \2577 \a 2 \2502  @use \"./zcol.scss\";\a   \2502  ^^^^^^^^^^^^^^^^^^\a   \2575 \a   src/theme/index.scss 2:1  root stylesheet";
 }

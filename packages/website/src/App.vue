@@ -1,9 +1,9 @@
 <script setup lang="ts">
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
-import { ZRow, ZCol } from 'sports_boy'
-import "sports_boy/theme/zrow.css"
-import "sports_boy/theme/zcol.css"
+
+// import "sports_boy/theme/zrow.css"
+// import "sports_boy/theme/zcol.css"
 </script>
 
 <template>
