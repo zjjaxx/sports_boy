@@ -1,8 +1,6 @@
 {
   "compilerOptions": {
     "target": "esnext",
-    "declaration": true,
-    "declarationDir": "dist",
     "useDefineForClassFields": true,
     "module": "esnext",
     "moduleResolution": "node",

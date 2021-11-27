@@ -43,13 +43,12 @@ export default defineComponent({
         }
     },
     render() {
-        const { tag } = this
-        const slots = {
-            default: () => <span>col~</span>,
-        };
+        const { tag, $slots } = this
         return (
-                <tag v-slots={slots} class={this.c_class}>
-                </tag>
+            <tag class={this.c_class}>
+                {$slots.default ? $slots.default() : ''}
+                <p>aafff</p>
+            </tag>
         )
     }
 })

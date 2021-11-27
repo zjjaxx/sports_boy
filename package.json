@@ -9,7 +9,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev":"yarn workspace website dev",
     "build":"yarn workspace sports_boy build",
-    "build:watch":"yarn workspace sports_boy build:watch"
+    "build:watch":"yarn workspace sports_boy build:watch",
+    "build:theme:watch":"yarn workspace sports_boy build:theme:watch"
   },
   "repository": {
     "type": "git",

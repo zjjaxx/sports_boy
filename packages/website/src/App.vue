@@ -1,18 +1,18 @@
 <script setup lang="ts">
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
-import {ZRow,ZCol} from 'sports_boy'
-
+import { ZRow, ZCol } from 'sports_boy'
+import "sports_boy/theme/zrow.css"
+import "sports_boy/theme/zcol.css"
 </script>
 
 <template>
   <img alt="Vue logo" src="./assets/logo.png" />
-  <test></test>
-  <p>website</p>
-  <ZRow>
-    a
+  <ZRow type="flex" justify="around" align="center">
+    <ZCol></ZCol>
+    <ZCol></ZCol>
+    <ZCol></ZCol>
   </ZRow>
-  <ZCol></ZCol>
 </template>
 
 <style>
