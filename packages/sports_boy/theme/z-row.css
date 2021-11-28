@@ -50,9 +50,8 @@
   align-items: flex-end;
 }
 
-.z-row {
+.z-clearfix::after {
+  clear: both;
+  content: " ";
   display: block;
-}
-.z-row .test {
-  background-color: red;
 }

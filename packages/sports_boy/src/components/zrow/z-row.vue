@@ -45,9 +45,8 @@ export default defineComponent({
     render() {
         const { tag, $slots } = this
         return (
-            <tag class={this.c_class}>
+            <tag class={['z-clearfix',...this.c_class]}>
                 {$slots.default ? $slots.default() : ''}
-                <p>aafff</p>
             </tag>
         )
     }
