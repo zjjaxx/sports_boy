@@ -1,7 +1,9 @@
-import { createApp } from 'vue'
+import { createApp} from 'vue'
 import App from './App.vue'
-import { ZRow, ZCol } from 'sports_boy'
+// import SportsBoy from 'sports_boy'
+// import "sports_boy/theme/index.css"
+import {ZCol,ZRow} from 'sports_boy'
+
 const app=createApp(App)
-app.component("ZRow",ZRow)
-app.component("ZCol",ZCol)
+app.use(ZRow).use(ZCol)
 app.mount('#app')

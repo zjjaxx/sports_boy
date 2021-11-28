@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "vite",
     "build:theme": "node scripts/autoBuildIndexScss.js & npx sass  --no-source-map src/theme:theme",
-    "build:theme:watch": "npx sass --watch  --no-source-map src/theme:theme",
+    "build:theme:watch": "node scripts/autoBuildIndexScss.js & npx sass --watch  --no-source-map src/theme:theme",
     "build": "vue-tsc --noEmit && vite build && yarn build:theme",
     "build:watch": "vue-tsc --noEmit && build=watch vite build",
     "serve": "vite preview"
