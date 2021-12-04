@@ -36,7 +36,7 @@ export default defineComponent({
             if (!type.value) {
                 return ""
             }
-            return [type.value ? `${type.value}` : '', `justify-${justify.value}`, `align-${align.value}`]
+            return [type.value ? `z-${type.value}` : '', `z-justify-${justify.value}`, `z-align-${align.value}`]
         })
         return {
             c_class
