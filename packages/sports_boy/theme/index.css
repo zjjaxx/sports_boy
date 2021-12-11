@@ -56,7 +56,20 @@
   display: block;
 }
 
+.z-button {
+  outline: none;
+  border: none;
+}
+
 .z-col {
   float: left;
   box-sizing: border-box;
+}
+
+.z-container {
+  flex: 1;
+}
+
+.z-main {
+  flex: 1;
 }
