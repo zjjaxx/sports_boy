@@ -4,6 +4,9 @@ import Components from 'unplugin-vue-components/vite'
 import styleImport from 'vite-plugin-style-import'
 // https://vitejs.dev/config/
 export default defineConfig({
+  server:{
+    open:true
+  },
   plugins: [
     vue(),
     Components(),
