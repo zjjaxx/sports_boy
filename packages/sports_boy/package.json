@@ -9,7 +9,7 @@
     "build:theme": "node scripts/autoBuildIndexScss.js & gulp build",
     "build:theme:watch": "node scripts/autoBuildIndexScss.js & gulp watch",
     "build": "vue-tsc --noEmit && vite build && yarn build:theme",
-    "build:watch": "vue-tsc --noEmit && build=watch vite build",
+    "build:watch": "vue-tsc --noEmit && cross-env build=watch vite build",
     "serve": "vite preview"
   },
   "files": [
@@ -34,6 +34,7 @@
     "@babel/preset-env": "^7.16.4",
     "@rollup/plugin-babel": "^5.3.0",
     "@vitejs/plugin-vue": "^1.9.3",
+    "cross-env": "^7.0.3",
     "gulp-postcss": "^9.0.1",
     "gulp-sass": "^5.0.0",
     "postcss": "^8.4.4",

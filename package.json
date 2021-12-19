@@ -8,6 +8,7 @@
   ],
   "private": true,
   "scripts": {
+    "start:dev": "node ./scripts/dev.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "initHusky": "husky install && husky add .husky/commit-msg 'node scripts/verifyCommit.js'",
     "dev": "yarn workspace website dev",
@@ -34,5 +35,6 @@
   "homepage": "https://github.com/zjjaxx/zr_ui#readme",
   "devDependencies": {
     "husky": "^7.0.4"
-  }
+  },
+  "dependencies": {}
 }
