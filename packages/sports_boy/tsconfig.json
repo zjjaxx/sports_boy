@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "types": ["vite/client", "@types/jest"],
     "target": "esnext",
     "useDefineForClassFields": true,
     "module": "esnext",
@@ -17,5 +18,5 @@
       "@types/*": ["types/*"]
     }
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "src/main.js"]
+  "include": ["test/**/*.ts","src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "src/main.js"]
 }

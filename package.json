@@ -9,7 +9,7 @@
   "private": true,
   "scripts": {
     "start:dev": "node ./scripts/dev.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:test": "yarn workspace sports_boy test",
     "initHusky": "husky install && husky add .husky/commit-msg 'node scripts/verifyCommit.js'",
     "dev": "yarn workspace website dev",
     "build": "yarn workspace sports_boy build",

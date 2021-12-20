@@ -1,5 +1,5 @@
-import {ZRow} from "@/components/layout/zrow/index"
-import {ZCol} from "@/components/layout/zcol/index"
+import {ZRow} from "@/components/layout/z-row/index"
+import {ZCol} from "@/components/layout/z-col/index"
 import {ZContainer} from "@/components/layout/z-container/index"
 import { ZHeader } from "@/components/layout/z-header"
 import { ZAside } from "@/components/layout/z-aside"

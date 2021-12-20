@@ -1,4 +1,4 @@
-<script lang="tsx">
+{/* <script lang="tsx"> */}
 import { defineComponent, toRefs, computed, PropType, provide } from "vue"
 export default defineComponent({
     props: {
@@ -51,5 +51,5 @@ export default defineComponent({
         )
     }
 })
-</script>
+// </script>
 
