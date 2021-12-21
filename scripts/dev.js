@@ -6,7 +6,7 @@ const execCmd = (params) => {
     });
 
     cmd.stderr.on('data', (data) => {
-        console.error(`stderr: ${data}`);
+        console.log(`%cstderr: ${data}`, 'color: #39f');
     });
     cmd.on('close', (code) => {
         console.log(`child process exited with code ${code}`);

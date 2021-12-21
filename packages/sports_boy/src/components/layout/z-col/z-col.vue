@@ -1,53 +1,49 @@
+<template>
+    <div class="z-col" :style="c_style">
+        <slot></slot>
+    </div>
+</template>
 <script lang="tsx">
-import { defineComponent,inject,computed,toRefs} from "vue"
+import { defineComponent, inject, computed, toRefs,toRaw } from "vue"
 export default defineComponent({
-    props:{
-        span:{
-            type:Number,
-            default:24
+    props: {
+        span: {
+            type: Number,
+            default: 24
         },
-        offset:{
-             type:Number,
-             default:0
+        offset: {
+            type: Number,
+            default: 0
         }
     },
-    setup(props){
-        const {span,offset}=toRefs(props)
+    setup(props) {
+        const { span, offset } = toRefs(props)
         //offset样式
-        const offsetStyle=computed(()=>{
+        const offsetStyle = computed(() => {
             return {
-                marginLeft:`${(offset.value>=24?24:offset.value)/24*100}%`
+                marginLeft: `${(offset.value >= 24 ? 24 : offset.value) / 24 * 100}%`
             }
         })
         //span样式
-        const spanStyle=computed(()=>{
+        const spanStyle = computed(() => {
             return {
-                width:`${(span.value>=24?24:span.value)/24*100}%`
+                width: `${(span.value >= 24 ? 24 : span.value) / 24 * 100}%`
             }
         })
         //gutter样式
-        const gutter=inject<number>("gutter")||0
-        const gutterStyle=computed(()=>{
+        const gutter = inject<number>("gutter") || 0
+        const gutterStyle = computed(() => {
             return {
-                paddingLeft:`${gutter/2}px`,
-                paddingRight:`${gutter/2}px`,
+                paddingLeft: `${gutter / 2}px`,
+                paddingRight: `${gutter / 2}px`,
             }
         })
+        const c_style = computed(() => ({
+            ...toRaw(gutterStyle.value) , ...toRaw(spanStyle.value), ...toRaw(offsetStyle.value)
+        }))
         return {
-            gutterStyle,
-            spanStyle,
-            offsetStyle
+            c_style
         }
-    },
-    render() {
-        const { $slots,gutterStyle,spanStyle,offsetStyle} = this
-        return (
-            <div class="z-col" style={{...gutterStyle,...spanStyle,...offsetStyle}}>
-                {
-                    $slots.default ? $slots.default() : null
-                }
-            </div>
-        )
     }
 })
 </script>
