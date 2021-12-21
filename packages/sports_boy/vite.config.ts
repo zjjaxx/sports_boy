@@ -22,6 +22,7 @@ export default defineConfig({
     rollupOptions: {
       external: ['vue'],
       plugins: [
+        //需配合.babelrc，做合并，不能使用babel.config.js，否则会报错
         babel({
           skipPreflightCheck: true,
           babelHelpers: 'runtime',
