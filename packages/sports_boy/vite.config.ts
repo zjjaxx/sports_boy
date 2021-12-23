@@ -21,6 +21,13 @@ export default defineConfig({
     },
     rollupOptions: {
       external: ['vue'],
+      output: {
+        // 在 UMD 构建模式下为这些外部化的依赖提供一个全局变量
+        globals: {
+          vue: 'Vue'
+        },
+        exports:"named"
+      },
       plugins: [
         //需配合.babelrc，做合并，不能使用babel.config.js，否则会报错
         babel({
@@ -29,7 +36,7 @@ export default defineConfig({
           extensions: ['.js', '.jsx', 'ts', "vue"],
           exclude: '**/node_modules/**' // 只编译我们的源代码
         }),
-      ]
+      ],
     }
   },
   resolve: {

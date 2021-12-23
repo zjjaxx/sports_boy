@@ -11,7 +11,7 @@
     "build": "vue-tsc --noEmit && vite build && yarn build:theme",
     "build:watch": "vue-tsc --noEmit && cross-env build=watch vite build",
     "serve": "vite preview",
-    "test": "cross-env MODE=test jest"
+    "test": "cross-env MODE=test jest --env=jsdom"
   },
   "files": [
     "dist",
