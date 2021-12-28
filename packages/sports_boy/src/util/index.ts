@@ -24,3 +24,20 @@ export const matchChildComponentName=(childrenVnodes:VNode[]|undefined,component
     })
     return item?true:false
 }
+//防抖
+export const debounce=(fn:()=>void,time:number)=>{
+    let timer
+    return ()=>{
+        if(timer){
+            clearTimeout(timer)
+            timer=null
+            timer= setTimeout(()=>{
+                fn()
+            },time)
+            return
+        }
+        timer=setTimeout(()=>{
+            fn()
+        },time)
+    }
+}

@@ -14,14 +14,14 @@
       </ZContainer>
     </ZContainer>
   </ZContainer>
-  <ZRow class="row" type="flex" :gutter="50">
-    <ZCol :span="6">
+  <ZRow class="row" :gutter="50">
+    <ZCol :span="12" :lg="6" :sm="12">
       <div class="col-content"></div>
     </ZCol>
-    <ZCol :span="6" :offset="6">
+    <ZCol :span="12" :lg="6" :sm="12">
       <div class="col-content"></div>
     </ZCol>
-    <ZCol :span="6">
+    <ZCol :span="12" :lg="6" :sm="12">
       <div class="col-content"></div>
     </ZCol>
   </ZRow>
@@ -29,26 +29,27 @@
 
 <style>
 .row {
+  margin-top: 10px;
   background-color: #eee;
 }
 .col-content {
   background: #777;
   height: 50px;
 }
-.z-container{
+.z-container {
   background-color: #eee;
 }
-.z-header{
-   background-color: #b3c0d1;
+.z-header {
+  background-color: #b3c0d1;
 }
-.z-aside{
+.z-aside {
   height: 260px;
-  background-color:#d3dce6;
+  background-color: #d3dce6;
 }
-.z-footer{
-   background-color: #b3c0d1;
+.z-footer {
+  background-color: #b3c0d1;
 }
-.z-main{
+.z-main {
   background-color: #e9eef3;
 }
 </style>
