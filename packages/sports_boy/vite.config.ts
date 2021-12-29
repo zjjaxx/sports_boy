@@ -13,6 +13,9 @@ export default defineConfig({
     dts(),
     vueJsx({})
   ],
+  optimizeDeps: {
+    exclude: ['vue-demi']
+  },
   build: {
     watch: isWatch ? {} : null,
     lib: {
@@ -26,7 +29,7 @@ export default defineConfig({
         globals: {
           vue: 'Vue'
         },
-        exports:"named"
+        exports: "named"
       },
       plugins: [
         //需配合.babelrc，做合并，不能使用babel.config.js，否则会报错

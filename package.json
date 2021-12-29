@@ -9,6 +9,7 @@
   "private": true,
   "scripts": {
     "start:dev": "node ./scripts/dev.js",
+    "dev2.0":"yarn workspace website_2.x serve",
     "start:test": "yarn workspace sports_boy test",
     "initHusky": "husky install && husky add .husky/commit-msg 'node scripts/verifyCommit.js'",
     "dev": "yarn workspace website dev",

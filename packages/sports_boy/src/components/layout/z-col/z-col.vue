@@ -5,7 +5,7 @@
 </template>
 <script lang="tsx">
 import { debounce } from "@/util/index"
-import { defineComponent, inject, computed, toRefs, toRaw, onMounted, ref } from "vue"
+import { defineComponent, inject, computed, toRefs, toRaw, onMounted, ref } from "vue-demi"
 export default defineComponent({
     props: {
         span: {
