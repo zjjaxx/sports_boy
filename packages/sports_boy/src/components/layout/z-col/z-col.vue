@@ -43,7 +43,6 @@ export default defineComponent({
         }
     },
     setup(props) {
-        console.log("setup-------------")
         const { span, offset, xs, sm, md, lg, xl } = toRefs(props)
         //offset样式
         const offsetStyle = computed(() => {
@@ -60,33 +59,14 @@ export default defineComponent({
                 window.matchMedia('(max-width: 992px)'),
                 window.matchMedia('(max-width: 768px)'),
             ]
+            const sizeList=[xl.value,lg.value,md.value,sm.value,xs.value]
             let spanValue = span.value
             //响应式判断
-            if (matchMediaList[0].matches) {
-                if (xl.value !== undefined) {
-                    spanValue = xl.value
+            matchMediaList.forEach((item,index)=>{
+                if(item.matches&&sizeList[index]!==undefined){
+                    spanValue=sizeList[index]!
                 }
-            }
-            if (matchMediaList[1].matches) {
-                if (lg.value !== undefined) {
-                    spanValue = lg.value
-                }
-            }
-            if (matchMediaList[2].matches) {
-                if (md.value !== undefined) {
-                    spanValue = md.value
-                }
-            }
-            if (matchMediaList[3].matches) {
-                if (sm.value !== undefined) {
-                    spanValue = sm.value
-                }
-            }
-            if (matchMediaList[4].matches) {
-                if (xs.value !== undefined) {
-                    spanValue = xs.value
-                }
-            }
+            })
             return {
                 width: `${(spanValue >= 24 ? 24 : spanValue) / 24 * 100}%`
             }

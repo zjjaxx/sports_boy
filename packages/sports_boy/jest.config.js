@@ -1,6 +1,12 @@
+const path =require("path")
 module.exports = {
   preset: 'ts-jest',
   testEnvironment: 'jsdom',
+  // collectCoverage: true,
+  // // collectCoverageFrom: [
+  // //   "**/*.vue",
+  // //   "!src/**/z-row/**"
+  // // ],
   moduleNameMapper:{
     "^@/(.*)$":"<rootDir>/src/$1"
   },
