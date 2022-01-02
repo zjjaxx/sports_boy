@@ -9,13 +9,14 @@
   "private": true,
   "scripts": {
     "start:dev": "node ./scripts/dev.js",
-    "dev2.0":"yarn workspace website_2.x serve",
+    "dev2.0":"yarn workspace website2.x serve",
     "start:test": "yarn workspace sports_boy test",
     "initHusky": "husky install && husky add .husky/commit-msg 'node scripts/verifyCommit.js'",
     "dev": "yarn workspace website dev",
     "build": "yarn workspace sports_boy build",
     "build:watch": "yarn workspace sports_boy build:watch",
-    "build:theme:watch": "yarn workspace sports_boy build:theme:watch"
+    "build:theme:watch": "yarn workspace sports_boy build:theme:watch",
+    "lint":"yarn workspace sports_boy lint"
   },
   "repository": {
     "type": "git",
