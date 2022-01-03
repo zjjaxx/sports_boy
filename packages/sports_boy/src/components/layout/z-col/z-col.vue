@@ -13,7 +13,7 @@ import {
   toRaw,
   onMounted,
   ref,
-} from "vue-demi";
+} from "vue";
 export default defineComponent({
   props: {
     span: {

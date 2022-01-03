@@ -1,5 +1,5 @@
 <script lang="tsx">
-import { defineComponent, toRefs, computed, PropType, provide } from "vue-demi";
+import { defineComponent, toRefs, computed, PropType, provide } from "vue";
 export default defineComponent({
   props: {
     // 间距

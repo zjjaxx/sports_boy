@@ -6,7 +6,7 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 //打包自动生成声明文件
 import dts from 'vite-plugin-dts'
 // https://vitejs.dev/config/
-const isWatch = process.env.build == "watch"
+const isWatch = process.env.build === "watch"
 export default defineConfig({
   plugins: [
     vue(),
