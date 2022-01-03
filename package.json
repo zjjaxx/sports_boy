@@ -11,7 +11,7 @@
     "start:dev": "node ./scripts/dev.js",
     "dev2.0":"yarn workspace website2.x serve",
     "start:test": "yarn workspace sports_boy test",
-    "initHusky": "husky install && husky add .husky/commit-msg 'node scripts/verifyCommit.js \r\nyarn run lint \r\nyarn run start:test '",
+    "initHusky": "husky install && husky add .husky/commit-msg 'node scripts/verifyCommit.js \r\n yarn run lint \r\n yarn run start:test '",
     "dev": "yarn workspace website dev",
     "build": "yarn workspace sports_boy build",
     "build:watch": "yarn workspace sports_boy build:watch",
