@@ -1,6 +1,6 @@
 const { src, watch, dest } = require("gulp")
-var postcss = require('gulp-postcss');
-var sass = require('gulp-sass')(require('sass'));
+const postcss = require('gulp-postcss');
+const sass = require('gulp-sass')(require('sass'));
 function buildStyles() {
     return src('./src/theme/*.scss')
         .pipe(sass().on('error', sass.logError))

@@ -1,0 +1,5 @@
+packages/website
+packages/sports_boy/test
+**/dist/**
+scripts
+**/.vscode/**

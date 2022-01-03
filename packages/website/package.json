@@ -7,7 +7,7 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "sports_boy": "1.0.0",
+    "sports_boy": "1.0.2",
     "vue": "^3.2.16"
   },
   "devDependencies": {
