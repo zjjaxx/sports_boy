@@ -3,7 +3,7 @@ module.exports = {
   env: {
     browser: true, // 表明在浏览器中直接运行，window等全局变量可以直接调用，不需要申明
     commonjs: true,
-    es2021: true,  // 直接设置环境为es2021 ,自动设置ecmaVersion 为2021
+    es2021: true, // 直接设置环境为es2021 ,自动设置ecmaVersion 为2021
   },
   // 全局变量申明，防止eslint报错
   globals: {
@@ -23,7 +23,8 @@ module.exports = {
   // 解析器配置
   parserOptions: {
     ecmaVersion: 12, // es 12 的版本
-    ecmaFeatures: { // 如果您使用 JSX，则需要在 ESLint 配置中启用 JSX。
+    ecmaFeatures: {
+      // 如果您使用 JSX，则需要在 ESLint 配置中启用 JSX。
       jsx: true,
     },
     parser: "@typescript-eslint/parser",

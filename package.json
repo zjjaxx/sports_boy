@@ -9,18 +9,18 @@
   "private": true,
   "scripts": {
     "start:dev": "node ./scripts/dev.js",
-    "dev2.0":"yarn workspace website2.x serve",
+    "dev2.0": "yarn workspace website2.x serve",
     "start:test": "yarn workspace sports_boy test",
     "initHusky": "husky install && husky add .husky/commit-msg 'node scripts/verifyCommit.js\nyarn run lint-staged\nyarn run start:test'",
     "dev": "yarn workspace website dev",
     "build": "yarn workspace sports_boy build",
     "build:watch": "yarn workspace sports_boy build:watch",
     "build:theme:watch": "yarn workspace sports_boy build:theme:watch",
-    "lint":"yarn workspace sports_boy lint"
+    "lint": "yarn workspace sports_boy lint"
   },
-  "lint-staged":{
-    "packages/sports_boy/src/**/*.{vue,js,ts}":"yarn run lint",
-    "packages/sports_boy/src/**/*.{vue,js,ts,css,scss}":"prettier --write ."
+  "lint-staged": {
+    "packages/sports_boy/src/**/*.{vue,js,ts}": "yarn run lint",
+    "packages/sports_boy/src/**/*.{vue,js,ts,css,scss}": "prettier --write"
   },
   "repository": {
     "type": "git",

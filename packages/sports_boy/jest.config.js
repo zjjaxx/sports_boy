@@ -1,27 +1,19 @@
-const path =require("path")
 module.exports = {
-  preset: 'ts-jest',
-  testEnvironment: 'jsdom',
+  preset: "ts-jest",
+  testEnvironment: "jsdom",
   // collectCoverage: true,
   // // collectCoverageFrom: [
   // //   "**/*.vue",
   // //   "!src/**/z-row/**"
   // // ],
-  moduleNameMapper:{
-    "^@/(.*)$":"<rootDir>/src/$1"
+  moduleNameMapper: {
+    "^@/(.*)$": "<rootDir>/src/$1",
   },
-  moduleFileExtensions: [
-    'js',
-    'jsx',
-    'ts',
-    'tsx',
-    'json',
-    'vue'
-  ],
+  moduleFileExtensions: ["js", "jsx", "ts", "tsx", "json", "vue"],
   transform: {
     // .vue文件用 vue-jest 处理
-    '^.+\\.vue$': '@vue/vue3-jest',
-    // .js或者.jsx用 babel-jest处理 
-    '^.+\\.js$': 'babel-jest',
-  }
-}
+    "^.+\\.vue$": "@vue/vue3-jest",
+    // .js或者.jsx用 babel-jest处理
+    "^.+\\.js$": "babel-jest",
+  },
+};

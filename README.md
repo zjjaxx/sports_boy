@@ -5,58 +5,83 @@ tags:
 ---
 
 ## 组件库技术选型
+
 - yarn workspace(统一管理有多个项目的仓库)
 - vue3.x
 - typescript
-- vite 打包js、vue等后缀文件
-- gulp 打包scss等文件
+- vite 打包 js、vue 等后缀文件
+- gulp 打包 scss 等文件
 - jest 单元测试
-- husky 作为git代码提交规范
+- husky 作为 git 代码提交规范
 - eslint+prettier 代码规范
-## 管理整个项目包 + 初始化vue3.x+typescript组件库项目 + 预览website项目
-## 组件库依赖管理 Yarn Workspace 
+
+## 管理整个项目包 + 初始化 vue3.x+typescript 组件库项目 + 预览 website 项目
+
+## 组件库依赖管理 Yarn Workspace
+
 Workspace 能更好的统一管理有多个项目的仓库，既可在每个项目下使用独立的 package.json 管理依赖，又可便利的享受一条 yarn 命令安装或者升级所有依赖等。更重要的是可以使多个项目共享同一个 node_modules 目录，提升开发效率和降低磁盘空间占用。
 
 ### 配置
-package.json文件
+
+package.json 文件
+
 ```
 "workspaces": ["packages/*"]
 "private":true,
 ```
-workspace仅仅是为了你的本机方便维护依赖。当你的包被发布到npm的时候，npm完全没有workspace的概念。所以为了避免你手抖发出去。yarn强制你把启用了workspace的工程的标记为私有。
+
+workspace 仅仅是为了你的本机方便维护依赖。当你的包被发布到 npm 的时候，npm 完全没有 workspace 的概念。所以为了避免你手抖发出去。yarn 强制你把启用了 workspace 的工程的标记为私有。
+
 ### 项目目录结构划分
+
 ```
 sports_boy
   _ packages(管理子包)
     - sports_boy(组件库子包)
     - website (预览子包)
 ```
+
 ### 相关命令
-#### 初始化vue3.x+typescript
+
+#### 初始化 vue3.x+typescript
+
 ```
 yarn create vite sports_boy --template vue-ts
 yarn create vite website --template vue-ts
 ```
+
 #### 安装依赖
+
 ```
 yarn workspace + 子包名 + add + 相关依赖库
 ```
+
 #### 执行子包脚本
+
 ```
 yarn workspace + 子包名 + 相关命令
 ```
-### 预览website项目本地引用组件库
-因为配置了yarn workspace关系(相当于npm link软链的形式)，可以直接在website子包中的package.json中配置
+
+### 预览 website 项目本地引用组件库
+
+因为配置了 yarn workspace 关系(相当于 npm link 软链的形式)，可以直接在 website 子包中的 package.json 中配置
+
 ```
   "dependencies": {
     "sports_boy": sports_boy子包中定义的版本号,
   }
 ```
-## 组件库打包工具选用vite
-### vite.config.js esm语法中使用node相关api，需要安装 @types/node
-### 安装@vitejs/plugin-vue-jsx，在开发组件库时使用jsx语法
-vite 的jsx默认使用react渲染，所以安装插件@vitejs/plugin-vue-jsx
-### vite的库打包模式配置
+
+## 组件库打包工具选用 vite
+
+### vite.config.js esm 语法中使用 node 相关 api，需要安装 @types/node
+
+### 安装@vitejs/plugin-vue-jsx，在开发组件库时使用 jsx 语法
+
+vite 的 jsx 默认使用 react 渲染，所以安装插件@vitejs/plugin-vue-jsx
+
+### vite 的库打包模式配置
+
 ```
   build: {
     //...
@@ -75,15 +100,20 @@ vite 的jsx默认使用react渲染，所以安装插件@vitejs/plugin-vue-jsx
       },
   }
 }
- 
+
 ```
+
 ### 组件库包的输出配置
-package.json中
+
+package.json 中
+
 ```
   "main": "./dist/sports_boy.umd.js",  //在所有规范中都适配,可以直接在浏览器运行
   "module": "./dist/sports_boy.es.js", //在esm中使用
 ```
-#### 上传npm包是配置我们需要上传的哪些文件
+
+#### 上传 npm 包是配置我们需要上传的哪些文件
+
 ```
   "files": [
     "dist",
@@ -92,9 +122,13 @@ package.json中
     "README.md"
   ],
 ```
-### vite打包的兼容性配置
-vite 的@vitejs/plugin-legacy不支持库的兼容性打包，使用rollup babel配置打包
-#### vite中的rollup配置 使用@rollup/plugin-babel插件
+
+### vite 打包的兼容性配置
+
+vite 的@vitejs/plugin-legacy 不支持库的兼容性打包，使用 rollup babel 配置打包
+
+#### vite 中的 rollup 配置 使用@rollup/plugin-babel 插件
+
 ```
  rollupOptions: {
       external: ['vue'],//打包中剔除vue，不然引用依赖会组件报错
@@ -108,7 +142,8 @@ vite 的@vitejs/plugin-legacy不支持库的兼容性打包，使用rollup babel
       ]
     }
 ```
-#### babel配置（这里使用.babelrc和rollup中的babel配置进行合并,否则使用babel.config.js全局配置这种方式会报错）
+
+#### babel 配置（这里使用.babelrc 和 rollup 中的 babel 配置进行合并,否则使用 babel.config.js 全局配置这种方式会报错）
 
 ```
 {
@@ -130,7 +165,9 @@ vite 的@vitejs/plugin-legacy不支持库的兼容性打包，使用rollup babel
   ]
 }
 ```
-相关babel 依赖
+
+相关 babel 依赖
+
 ```
 @babel/core //babel核心库必须安装
 @babel/runtime //以下3个为一些polyfill提供沙盒环境(为一些polyfill取别名防治污染全局变量)和复用帮助文件
@@ -138,13 +175,20 @@ vite 的@vitejs/plugin-legacy不支持库的兼容性打包，使用rollup babel
 @babel/plugin-transform-runtime
 ```
 
-## gulp 打包scss等文件
-为了组件库的按需导入,不能把样式内嵌到vue文件中,需一个组件对应一个样式文件,单独打包
-### 采用gulp-sass 支持scss打包
-### 所有的对css处理都放到postcss插件中
-gulp相关postcss插件 gulp-postcss
-#### 对css兼容性处理 和 压缩
+## gulp 打包 scss 等文件
+
+为了组件库的按需导入,不能把样式内嵌到 vue 文件中,需一个组件对应一个样式文件,单独打包
+
+### 采用 gulp-sass 支持 scss 打包
+
+### 所有的对 css 处理都放到 postcss 插件中
+
+gulp 相关 postcss 插件 gulp-postcss
+
+#### 对 css 兼容性处理 和 压缩
+
 postcss.config.js
+
 ```
 module.exports = {
     plugins: [
@@ -153,12 +197,16 @@ module.exports = {
     ]
 }
 ```
+
 相关依赖
+
 ```
 autoprefixer
 cssnano
 ```
-### gulpfile.js配置
+
+### gulpfile.js 配置
+
 ```
 const { src, watch, dest } = require("gulp")
 var postcss = require('gulp-postcss');
@@ -175,21 +223,29 @@ exports.watch = function () {
     watch('./src/theme/*.scss',{ ignoreInitial: false }, buildStyles);
 };
 ```
+
 ### 上面我们只处理了支持组件库按需导入的方式，还没有处理全部导入
-#### 在我们打包css时,先使用node为我们生成一份包含所有组件样式引入的index.scss文件,然后在进行打包
-package.json使用&顺序执行脚本
+
+#### 在我们打包 css 时,先使用 node 为我们生成一份包含所有组件样式引入的 index.scss 文件,然后在进行打包
+
+package.json 使用&顺序执行脚本
 
 [代码](https://github.com/zjjaxx/sports_boy/blob/main/packages/sports_boy/scripts/autoBuildIndexScss.js)
-对于公共样式的引入:在生成的index.scss中使用@use 替代@import 防止重复引用多次会生成多个重复样式
+对于公共样式的引入:在生成的 index.scss 中使用@use 替代@import 防止重复引用多次会生成多个重复样式
+
 ### 在项目中引入组件库
+
 全局引入
+
 ```
 import SportsBoy from 'sports_boy'
 import "sports_boy/theme/index.css"
 ```
-按需引入  安装vite-plugin-style-import插件
 
-在vite.config.js中配置
+按需引入 安装 vite-plugin-style-import 插件
+
+在 vite.config.js 中配置
+
 ```
  plugins: [
     //...
@@ -199,29 +255,38 @@ import "sports_boy/theme/index.css"
           libraryName: 'sports_boy',
           esModule: true,
           resolveStyle: name => {
-            return `../theme/${name}.css` 
+            return `../theme/${name}.css`
           },
         }
       ]
     })
   ]
 ```
-## 组件库兼容性配置(必须配，不然babel和autoprefixer不生效)
+
+## 组件库兼容性配置(必须配，不然 babel 和 autoprefixer 不生效)
+
 所有对兼容配置都放到.browserslistrc
+
 ```
 > 1% //兼容大于1%的市场占有率的浏览器
 last 2 versions //兼容浏览器最近的2个版本
 not dead //不兼容不维护的浏览器
 ```
-## 自动生成typescript声明文件 vite-plugin-dts 插件
-在组件库包的package.json中配置
+
+## 自动生成 typescript 声明文件 vite-plugin-dts 插件
+
+在组件库包的 package.json 中配置
+
 ```
 "typings": "./dist/src/main.d.ts",
 ```
 
-## jest作为单元测试 (无法使用jsx语法，暂未解决)
-### 使用vue官方提供的插件 @vue/test-utils
-### 配置jest.config.js
+## jest 作为单元测试 (无法使用 jsx 语法，暂未解决)
+
+### 使用 vue 官方提供的插件 @vue/test-utils
+
+### 配置 jest.config.js
+
 ```
 module.exports = {
   preset: 'ts-jest', //处理ts
@@ -240,7 +305,9 @@ module.exports = {
   }
 }
 ```
+
 相关依赖
+
 ```
 jest
 babel-jest //（默认jest 只支持commonjs语法 ,不支持esmodule,使用babel做语法转换）
@@ -248,20 +315,28 @@ babel-jest //（默认jest 只支持commonjs语法 ,不支持esmodule,使用babe
 @vue/vue3-jest //处理vue后缀的文件
 ts-jest //处理ts后缀的文件
 ```
+
 ## husky git 提交规范
+
 ### 初始化 [代码](https://github.com/zjjaxx/sports_boy/blob/main/scripts/verifyCommit.js)
+
 ```
  "initHusky": "husky install && husky add .husky/commit-msg 'node scripts/verifyCommit.js'",
 ```
 
-## eslint + prettier作为代码规范
-- 首先安装eslint
-- 再执行eslint 初始化 选择好对应的规范配置
+## eslint + prettier 作为代码规范
+
+- 首先安装 eslint
+- 再执行 eslint 初始化 选择好对应的规范配置
+
 ```
 npx eslint --init
 ```
+
 ### [eslint-plugin-vue 相关配置项](https://eslint.vuejs.org/user-guide)
-### vscode 相关插件为prettier + eslint
+
+### vscode 相关插件为 prettier + eslint
+
 ```
 module.exports = {
   root: true, // 表明为根结点的eslint配置，不再向上查找
@@ -302,5 +377,3 @@ module.exports = {
 };
 
 ```
-
-

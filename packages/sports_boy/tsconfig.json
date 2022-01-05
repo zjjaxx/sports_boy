@@ -18,5 +18,12 @@
       "@types/*": ["types/*"]
     }
   },
-  "include": ["test/**/*.ts","src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "src/main.js"]
+  "include": [
+    "test/**/*.ts",
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "src/main.js"
+  ]
 }
