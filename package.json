@@ -11,7 +11,7 @@
     "start:dev": "node ./scripts/dev.js",
     "dev2.0":"yarn workspace website2.x serve",
     "start:test": "yarn workspace sports_boy test",
-    "initHusky": "husky install && husky add .husky/commit-msg 'yarn run lint-staged'",
+    "initHusky": "husky install && husky add .husky/commit-msg 'node scripts/verifyCommit.js\nyarn run lint-staged\nyarn run start:test'",
     "dev": "yarn workspace website dev",
     "build": "yarn workspace sports_boy build",
     "build:watch": "yarn workspace sports_boy build:watch",
@@ -19,7 +19,7 @@
     "lint":"yarn workspace sports_boy lint"
   },
   "lint-staged":{
-    "packages/sports_boy/src/**/*.{vue,js,ts}":"node scripts/verifyCommit.js && yarn run lint && yarn run start:test"
+    "packages/sports_boy/src/**/*.{vue,js,ts}":"yarn run lint"
   },
   "repository": {
     "type": "git",
