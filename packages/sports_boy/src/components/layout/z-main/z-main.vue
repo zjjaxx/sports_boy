@@ -1,7 +1,6 @@
 <template>
-<div class="z-main">
+  <div class="z-main">
     <slot></slot>
-</div>
+  </div>
 </template>
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>

@@ -19,7 +19,8 @@
     "lint":"yarn workspace sports_boy lint"
   },
   "lint-staged":{
-    "packages/sports_boy/src/**/*.{vue,js,ts}":"yarn run lint"
+    "packages/sports_boy/src/**/*.{vue,js,ts}":"yarn run lint",
+    "packages/sports_boy/src/**/*.{vue,js,ts,css,scss}":"prettier --write ."
   },
   "repository": {
     "type": "git",
