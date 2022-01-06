@@ -6,7 +6,7 @@ interface Props {
   // 尺寸
   size: "medium" | "small" | "mini";
   // 类型
-  type: string;
+  type: "primary" | "success" | "warning" | "danger" | "info" | "text";
   // 是否朴素按钮
   plain: boolean;
   // 是否圆角按钮
@@ -20,7 +20,7 @@ interface Props {
   // 是否默认聚焦
   autofocus: boolean;
   // 原生
-  nativeType: string;
+  nativeType: "button" | "submit" | "reset";
 }
 withDefaults(defineProps<Props>(), {});
 </script>
