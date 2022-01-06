@@ -2,5 +2,5 @@
 . "$(dirname "$0")/_/husky.sh"
 
 node scripts/verifyCommit.js
-yarn run lint-staged
 yarn run start:test
+yarn run lint-staged

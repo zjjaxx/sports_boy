@@ -17,20 +17,20 @@
   font-weight: 500;
   padding: 12px 20px;
   font-size: size.$fontSize;
-  &:hover{
+  &:hover {
     color: color.$primaryColor;
     border-color: color.$leakPrimaryColor;
     background-color: color.$leakPrimaryBg;
   }
 }
-.z-medium-button{
+.z-medium-button {
   padding: 10px 20px;
 }
-.z-small-button{
+.z-small-button {
   padding: 9px 15px;
   font-size: size.$fontSmallSize;
 }
-.z-mini-button{
+.z-mini-button {
   padding: 7px 15px;
   font-size: size.$fontSmallSize;
 }
