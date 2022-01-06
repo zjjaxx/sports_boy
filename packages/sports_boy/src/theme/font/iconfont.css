@@ -1,8 +1,8 @@
 @font-face {
   font-family: "gulu"; /* Project id 1609919 */
-  src: url('iconfont.woff2?t=1641449792886') format('woff2'),
-       url('iconfont.woff?t=1641449792886') format('woff'),
-       url('iconfont.ttf?t=1641449792886') format('truetype');
+  src: url("iconfont.woff2?t=1641449792886") format("woff2"),
+    url("iconfont.woff?t=1641449792886") format("woff"),
+    url("iconfont.ttf?t=1641449792886") format("truetype");
 }
 
 .gulu {
@@ -152,4 +152,3 @@
 .gulu-setting:before {
   content: "\e722";
 }
-

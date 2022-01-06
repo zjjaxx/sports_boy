@@ -22,7 +22,5 @@ interface Props {
   // 原生
   nativeType: string;
 }
-withDefaults(defineProps<Props>(),{
-
-})
+withDefaults(defineProps<Props>(), {});
 </script>
