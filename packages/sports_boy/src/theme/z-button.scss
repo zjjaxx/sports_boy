@@ -1,6 +1,36 @@
+@use "color";
+@use "global";
+@use "size";
 .z-button {
-  outline: none;
-  border: none;
+  display: inline-block;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  background: #fff;
+  @include global.round-border();
+  color: color.$mainFontColor;
+  text-align: center;
+  box-sizing: border-box;
+  outline: 0;
+  margin: 0;
+  transition: 0.1s;
+  font-weight: 500;
+  padding: 12px 20px;
+  font-size: size.$fontSize;
+  &:hover{
+    color: color.$primaryColor;
+    border-color: color.$leakPrimaryColor;
+    background-color: color.$leakPrimaryBg;
+  }
 }
-.z-button-size-medium {
+.z-medium-button{
+  padding: 10px 20px;
+}
+.z-small-button{
+  padding: 9px 15px;
+  font-size: size.$fontSmallSize;
+}
+.z-mini-button{
+  padding: 7px 15px;
+  font-size: size.$fontSmallSize;
 }

@@ -6,6 +6,7 @@ import { ZAside } from "@/components/layout/z-aside";
 import { ZMain } from "@/components/layout/z-main";
 import { ZFooter } from "@/components/layout/z-footer";
 import { ZIcon } from "@/components/z-icon";
+import {ZButton} from "@/components/z-button"
 import { App } from "vue";
 const elementList = {
   ZRow,
@@ -16,6 +17,7 @@ const elementList = {
   ZMain,
   ZFooter,
   ZIcon,
+  ZButton
 };
 const SportsBoy = {
   install: (Vue: App) => {
@@ -26,4 +28,4 @@ const SportsBoy = {
 };
 export default SportsBoy;
 
-export { ZRow, ZCol, ZContainer, ZHeader, ZAside, ZMain, ZFooter, ZIcon };
+export { ZRow, ZCol, ZContainer, ZHeader, ZAside, ZMain, ZFooter, ZIcon ,ZButton};

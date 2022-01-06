@@ -1,5 +1,7 @@
 <template>
-  <button class="z-button"></button>
+  <button :class="['z-button','z-'+props.size+'-button']">
+    <slot></slot>
+  </button>
 </template>
 <script setup lang="ts">
 interface Props {
@@ -22,5 +24,6 @@ interface Props {
   // 原生
   nativeType: "button" | "submit" | "reset";
 }
-withDefaults(defineProps<Props>(), {});
+const props=withDefaults(defineProps<Props>(), {});
+
 </script>

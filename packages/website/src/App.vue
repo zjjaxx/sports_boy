@@ -1,6 +1,9 @@
 <script setup lang="ts">
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
+import {ref} from "vue"
+const size=ref("default")
+const sizeChange=(_size:string)=>{
+  size.value=_size
+}
 </script>
 
 <template>
@@ -26,6 +29,20 @@
     </ZCol>
   </ZRow>
   <ZIcon></ZIcon>
+  <ZRow>
+    <ZCol :span="6">
+       <ZButton :size="size" style="margin-left: 10px;" @click="">default</ZButton>
+    </ZCol> 
+    <ZCol :span="6">
+       <ZButton size="medium" style="margin-left: 10px;" @click="sizeChange('medium')">medium</ZButton>
+    </ZCol> 
+     <ZCol :span="6">
+       <ZButton size="small" style="margin-left: 10px;" @click="sizeChange('small')">small</ZButton>
+    </ZCol> 
+     <ZCol :span="6">
+       <ZButton size="mini" style="margin-left: 10px;" @click="sizeChange('mini')">mini</ZButton>
+    </ZCol> 
+  </ZRow>
 </template>
 
 <style>
