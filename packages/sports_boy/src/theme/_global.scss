@@ -1,3 +1,4 @@
+@use "color";
 * {
   margin: 0;
   padding: 0;
@@ -42,4 +43,35 @@
   clear: both;
   content: " ";
   display: block;
+}
+// 基础投影
+.base-shadow {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.04);
+}
+// 浅色投影
+.light-shadow {
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+}
+
+// 无圆角
+@mixin base-border($color: color.$borderColorOne, $width: 1px) {
+  border: $width solid $color;
+}
+// 无圆角虚线
+@mixin base-border-dash($color: color.$borderColorOne, $width: 1px) {
+  border: $width dashed $color;
+}
+// 圆角
+@mixin round-border($color: color.$borderColorOne, $radius: 4px, $width: 1px) {
+  border: $width solid $color;
+  border-radius: $radius;
+}
+// 圆角虚线
+@mixin round-border-dash(
+  $color: color.$borderColorOne,
+  $radius: 4px,
+  $width: 1px
+) {
+  border: $width dashed $color;
+  border-radius: $radius;
 }

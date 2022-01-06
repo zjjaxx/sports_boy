@@ -17,7 +17,7 @@ export default defineConfig({
           libraryName: "sports_boy",
           esModule: true,
           resolveStyle: (name) => {
-            return `../theme/${name}.css`;
+            return `./theme/${name}.css`;
           },
         },
       ],

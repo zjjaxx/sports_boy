@@ -12,7 +12,8 @@
     "build:watch": "vue-tsc --noEmit && cross-env build=watch vite build",
     "serve": "vite preview",
     "test": "jest",
-    "lint": "eslint --ext .js,.vue src"
+    "lint": "eslint --ext .js,.vue src",
+    "lint:fix": "eslint --ext .js,.vue src --fix"
   },
   "files": [
     "dist",
@@ -50,6 +51,7 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-vue": "^8.2.0",
+    "gulp-clean": "^0.4.0",
     "gulp-postcss": "^9.0.1",
     "gulp-sass": "^5.0.0",
     "jest": "^27.4.5",

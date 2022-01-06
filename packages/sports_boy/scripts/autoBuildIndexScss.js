@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const blackList = ["global.scss", "index.scss"];
+const blackList = ["font", "index.scss"];
 let fileContent = `@use "./global.scss";\n`;
 const themePath = path.resolve(__dirname, "../src/theme");
 let fileNameList = fs.readdirSync(themePath);

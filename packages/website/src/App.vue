@@ -25,6 +25,7 @@
       <div class="col-content"></div>
     </ZCol>
   </ZRow>
+  <ZIcon></ZIcon>
 </template>
 
 <style>

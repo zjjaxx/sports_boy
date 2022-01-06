@@ -10,6 +10,7 @@ import {
   ZMain,
   ZFooter,
   ZHeader,
+  ZIcon
 } from "sports_boy";
 
 const app = createApp(App);
@@ -21,5 +22,6 @@ app
   .use(ZAside)
   .use(ZMain)
   .use(ZFooter)
+  .use(ZIcon)
   .use(ZHeader);
 app.mount("#app");
