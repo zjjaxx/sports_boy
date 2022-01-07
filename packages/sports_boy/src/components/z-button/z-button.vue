@@ -1,5 +1,5 @@
 <template>
-  <button :class="['z-button',    'z-' + props.size + '-button']">
+  <button :class="['z-button',      'z-' + props.size + '-button']">
     <slot></slot>
   </button>
 </template>
