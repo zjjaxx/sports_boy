@@ -17,7 +17,8 @@
     "build:watch": "yarn workspace sports_boy build:watch",
     "build:theme:watch": "yarn workspace sports_boy build:theme:watch",
     "lint": "yarn workspace sports_boy lint",
-    "lint:fix": "yarn workspace sports_boy lint:fix"
+    "lint:fix": "yarn workspace sports_boy lint:fix",
+    "lintStaged":"lint-staged"
   },
   "lint-staged": {
     "packages/sports_boy/src/**/*.{vue,js,ts}": "yarn run lint",
