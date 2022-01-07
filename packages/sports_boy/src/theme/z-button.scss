@@ -3,11 +3,11 @@
 @use "size";
 
 .z-button {
-  display: inline-block;
+    display: inline-block;
   line-height: 1;
   white-space: nowrap;
   cursor: pointer;
-     background: #fff;
+  background: #fff;
   @include global.round-border();
   color: color.$mainFontColor;
   text-align: center;
