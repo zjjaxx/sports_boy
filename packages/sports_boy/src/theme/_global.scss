@@ -54,7 +54,7 @@
 }
 
 // 无圆角
-@mixin base-border($color: color.$borderColorOne, $width: 1px) {
+   @mixin base-border($color: color.$borderColorOne, $width: 1px) {
   border: $width solid $color;
 }
 // 无圆角虚线
