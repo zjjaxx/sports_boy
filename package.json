@@ -21,7 +21,7 @@
   },
   "lint-staged": {
     "packages/sports_boy/src/**/*.{vue,js,ts}": "yarn run lint",
-    "packages/sports_boy/src/**/*.{vue,js,ts,css,scss}": "prettier --write"
+    "packages/sports_boy/src/**/*.{vue,js,ts,css,scss}":["prettier --write","git add"]
   },
   "repository": {
     "type": "git",
