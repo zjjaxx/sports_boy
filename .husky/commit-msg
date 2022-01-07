@@ -3,4 +3,4 @@
 
 node scripts/verifyCommit.js
 yarn run lint-staged
-yarn run start:test
+
