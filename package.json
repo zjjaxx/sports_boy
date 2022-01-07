@@ -17,8 +17,7 @@
     "build:watch": "yarn workspace sports_boy build:watch",
     "build:theme:watch": "yarn workspace sports_boy build:theme:watch",
     "lint": "yarn workspace sports_boy lint",
-    "lint:fix": "yarn workspace sports_boy lint:fix",
-    "lintStaged":"lint-staged"
+    "lint:fix": "yarn workspace sports_boy lint:fix"
   },
   "lint-staged": {
     "packages/sports_boy/src/**/*.{vue,js,ts}": "yarn run lint",
@@ -43,8 +42,8 @@
   "homepage": "https://github.com/zjjaxx/zr_ui#readme",
   "devDependencies": {
     "husky": "^7.0.4",
-    "lint-staged": "^12.1.5",
-    "prettier": "^2.5.1"
+    "prettier": "^2.5.1",
+    "lint-staged": "^10.0.0"
   },
   "dependencies": {}
 }
