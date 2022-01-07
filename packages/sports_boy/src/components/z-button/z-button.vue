@@ -24,5 +24,7 @@ interface Props {
   // 原生
   nativeType: "button" | "submit" | "reset";
 }
-const props = withDefaults(defineProps<Props>(), {});
+const props = withDefaults(defineProps<Props>(), {
+  
+});
 </script>

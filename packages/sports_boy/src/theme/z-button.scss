@@ -35,3 +35,23 @@
   padding: 7px 15px;
   font-size: size.$fontSmallSize;
 }
+.z-type-primary{
+  background-color: color.$primaryColor;
+  color: color.$white;
+}
+.z-type-success{
+  background-color: color.$successColor;
+  color: color.$white;
+}
+.z-type-warning{
+  background-color: color.$warningColor;
+  color: color.$white;
+}
+.z-type-error{
+  background-color: color.$errorColor;
+  color: color.$white;
+}
+.z-type-info{
+  background-color: color.$infoColor;
+  color: color.$white;
+}
