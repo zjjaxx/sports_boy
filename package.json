@@ -21,7 +21,7 @@
   },
   "lint-staged": {
     "packages/sports_boy/src/**/*.{vue,js,ts}": "yarn run lint",
-    "packages/sports_boy/src/**/*.{vue,js,ts,css,scss}": "prettier --write"
+    "**/*.{vue,js,ts,css,scss}": ["prettier --write","git add ."]
   },
   "repository": {
     "type": "git",
@@ -42,8 +42,8 @@
   "homepage": "https://github.com/zjjaxx/zr_ui#readme",
   "devDependencies": {
     "husky": "^7.0.4",
-    "prettier": "^2.5.1",
-    "lint-staged": "^10.0.0"
+    "lint-staged": "^12.1.5",
+    "prettier": "^2.5.1"
   },
   "dependencies": {}
 }
