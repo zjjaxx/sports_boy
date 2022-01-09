@@ -8,7 +8,8 @@
   white-space: nowrap;
   cursor: pointer;
   background: #fff;
-  @include global.round-border();
+  @include global.base-border();
+  @include global.round();
   color: color.$mainFontColor;
   text-align: center;
   box-sizing: border-box;
@@ -20,8 +21,8 @@
   font-size: size.$fontSize;
   &:hover {
     color: color.$primaryColor;
-    border-color: color.$leakPrimaryColor;
-    background-color: color.$leakPrimaryBg;
+    border-color: color.$hoverBaseColor;
+    background-color: color.$hoverBaseBg;
   }
 }
 .z-medium-button {
@@ -38,20 +39,59 @@
 .z-type-primary {
   background-color: color.$primaryColor;
   color: color.$white;
+  @include global.base-border(color.$primaryColor);
+  &:hover {
+    background: color.$hoverPrimaryColor;
+    border-color: color.$hoverPrimaryColor;
+    color: color.$white;
+  }
 }
 .z-type-success {
   background-color: color.$successColor;
   color: color.$white;
+  @include global.base-border(color.$successColor);
+  &:hover {
+    background: color.$hoverSuccessColor;
+    border-color: color.$hoverSuccessColor;
+    color: color.$white;
+  }
 }
 .z-type-warning {
   background-color: color.$warningColor;
   color: color.$white;
+  @include global.base-border(color.$warningColor);
+  &:hover {
+    background: color.$hoverWarningColor;
+    border-color: color.$hoverWarningColor;
+    color: color.$white;
+  }
 }
-.z-type-error {
-  background-color: color.$errorColor;
+.z-type-danger {
+  background-color: color.$dangerColor;
   color: color.$white;
+  @include global.base-border(color.$dangerColor);
+  &:hover {
+    background: color.$hoverDangerColor;
+    border-color: color.$hoverDangerColor;
+    color: color.$white;
+  }
 }
 .z-type-info {
   background-color: color.$infoColor;
   color: color.$white;
+  @include global.base-border(color.$infoColor);
+  &:hover {
+    background: color.$hoverInfoColor;
+    border-color: color.$hoverInfoColor;
+    color: color.$white;
+  }
+}
+.z-round{
+  @include global.round(22px);
+}
+.z-disable{
+  @include global.disable();
+}
+.z-icon-right{
+  margin-right: 5px;
 }
