@@ -1,5 +1,5 @@
 <template>
-  <i :class="['gulu','z-icon','gulu-' + props.name]"></i>
+  <i :class="['gulu', 'z-icon', 'gulu-' + props.name]"></i>
 </template>
 <script lang="ts" setup>
 interface Props {

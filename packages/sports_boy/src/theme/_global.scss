@@ -62,11 +62,11 @@
   border: $width dashed $color;
 }
 // 圆角
-@mixin round($radius: 4px,) {
+@mixin round($radius: 4px) {
   border-radius: $radius;
 }
 // 禁用
-@mixin disable($opacity:0.4){
+@mixin disable($opacity: 0.4) {
   opacity: $opacity;
   cursor: not-allowed;
 }

@@ -86,12 +86,12 @@
     color: color.$white;
   }
 }
-.z-round{
+.z-round {
   @include global.round(22px);
 }
-.z-disable{
+.z-disable {
   @include global.disable();
 }
-.z-icon-right{
+.z-icon-right {
   margin-right: 5px;
 }
