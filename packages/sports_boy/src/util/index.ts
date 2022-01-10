@@ -1,9 +1,4 @@
-import {
-  App,
-  ComponentCustomOptions,
-  Plugin,
-  VNode
-} from "vue";
+import { App, ComponentCustomOptions, Plugin, VNode } from "vue";
 interface CustomComponent extends ComponentCustomOptions {
   name?: string;
 }
@@ -34,6 +29,20 @@ export const matchChildComponentName = (
     }
   });
   return !!item;
+};
+// 匹配父组件名
+export const matchParentComponentName = (
+  parentVnode: VNode | undefined,
+  parentVnodeName: string
+) => {
+  if (!parentVnode) {
+    return false;
+  }
+  if (parentVnode.type && (parentVnode.type as CustomComponent).name)
+    return parentVnodeName === (parentVnode.type as CustomComponent).name;
+  else {
+    return false;
+  }
 };
 //防抖
 export const debounce = (fn: () => void, time: number) => {

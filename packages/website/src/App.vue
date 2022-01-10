@@ -302,6 +302,26 @@ const typeChange = (_type: string) => {
       >
     </ZCol>
   </ZRow>
+  <ZRow class="row-1">
+    <ZCol :offset="2" :span="6">
+      <ZButtonGroup>
+        <ZButton icon="share" type="primary">按钮组</ZButton>
+        <ZButton icon="share" type="primary">按钮组</ZButton>
+      </ZButtonGroup>
+    </ZCol>
+    <ZCol :span="6">
+      <ZButtonGroup>
+        <ZButton icon="share">按钮组</ZButton>
+        <ZButton icon="share">按钮组</ZButton>
+      </ZButtonGroup>
+    </ZCol>
+    <ZCol :span="6">
+      <ZButtonGroup>
+        <ZButton icon="share" round>按钮组</ZButton>
+        <ZButton icon="share" round>按钮组</ZButton>
+      </ZButtonGroup>
+    </ZCol>
+  </ZRow>
 </template>
 
 <style>

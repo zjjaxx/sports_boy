@@ -7,6 +7,7 @@ import { ZMain } from "@/components/layout/z-main";
 import { ZFooter } from "@/components/layout/z-footer";
 import { ZIcon } from "@/components/z-icon";
 import { ZButton } from "@/components/z-button";
+import { ZButtonGroup } from "@/components/z-button-group";
 import { App } from "vue";
 const elementList = {
   ZRow,
@@ -18,6 +19,7 @@ const elementList = {
   ZFooter,
   ZIcon,
   ZButton,
+  ZButtonGroup,
 };
 const SportsBoy = {
   install: (Vue: App) => {
@@ -38,4 +40,5 @@ export {
   ZFooter,
   ZIcon,
   ZButton,
+  ZButtonGroup,
 };
