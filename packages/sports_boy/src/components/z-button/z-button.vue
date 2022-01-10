@@ -6,16 +6,26 @@
       props.size && 'z-' + props.size + '-button',
       props.type && 'z-type-' + props.type,
       round && 'z-round',
-      disable && 'z-disable',
+      disable || (loading && 'z-disable'),
     ]"
   >
+    <ZIcon
+      v-if="loading"
+      :class="['z-icon-loading', slots.default && 'z-icon-right']"
+      name="loading-out"
+    ></ZIcon>
     <slot name="icon">
-      <ZIcon v-if="icon" class="z-icon-right" :name="icon"></ZIcon>
+      <ZIcon
+        v-if="icon && !loading"
+        :class="[slots.default && 'z-icon-right']"
+        :name="icon"
+      ></ZIcon>
     </slot>
-    <slot>按钮</slot>
+    <slot></slot>
   </button>
 </template>
 <script setup lang="ts">
+import { useSlots } from "vue";
 import ZIcon from "../z-icon/z-icon.vue";
 interface Props {
   // 尺寸
@@ -36,4 +46,5 @@ interface Props {
   nativeType: "button" | "submit" | "reset";
 }
 const props = withDefaults(defineProps<Props>(), {});
+const slots = useSlots();
 </script>

@@ -218,6 +218,16 @@ const typeChange = (_type: string) => {
         size="medium"
         style="margin-left: 10px"
         @click="sizeChange('medium')"
+      ></ZButton>
+    </ZCol>
+    <ZCol :span="6">
+      <ZButton
+        icon="share"
+        round
+        type="primary"
+        size="medium"
+        style="margin-left: 10px"
+        @click="sizeChange('medium')"
         >中等按钮</ZButton
       >
     </ZCol>
@@ -238,6 +248,54 @@ const typeChange = (_type: string) => {
         round
         size="mini"
         type="primary"
+        style="margin-left: 10px"
+        @click="sizeChange('mini')"
+        >超小按钮</ZButton
+      >
+    </ZCol>
+  </ZRow>
+  <ZRow class="row-1">
+    <ZCol :span="6">
+      <ZButton
+        icon="share"
+        loading
+        type="primary"
+        size="medium"
+        style="margin-left: 10px"
+        @click="sizeChange('medium')"
+        >中等按钮</ZButton
+      >
+    </ZCol>
+    <ZCol :span="6">
+      <ZButton
+        loading
+        icon="share"
+        size="small"
+        type="primary"
+        round
+        style="margin-left: 10px"
+        @click="sizeChange('small')"
+        >小型按钮</ZButton
+      >
+    </ZCol>
+    <ZCol :span="6">
+      <ZButton
+        loading
+        icon="share"
+        round
+        size="mini"
+        type="primary"
+        style="margin-left: 10px"
+        @click="sizeChange('mini')"
+        >超小按钮</ZButton
+      >
+    </ZCol>
+    <ZCol :span="6">
+      <ZButton
+        loading
+        icon="share"
+        round
+        size="mini"
         style="margin-left: 10px"
         @click="sizeChange('mini')"
         >超小按钮</ZButton

@@ -24,6 +24,9 @@
     border-color: color.$hoverBaseColor;
     background-color: color.$hoverBaseBg;
   }
+  .z-icon-loading {
+    animation: loading 2s linear infinite;
+  }
 }
 .z-medium-button {
   padding: 10px 20px;
