@@ -1,8 +1,11 @@
+
+![ci](https://github.com/zjjaxx/sports_boy/blob/main/.github/workflows/sports_boy.js.yml/badge.svg)
 ---
 title: sports_boy
 date: 2021-11-20 10:20:21
 tags:
 ---
+
 
 ## 组件库技术选型
 - yarn workspace(统一管理有多个项目的仓库)
@@ -13,6 +16,7 @@ tags:
 - jest 单元测试
 - eslint+prettier 代码规范
 - husky 添加在每次代码提交前的执行的钩子函数 包括git代码提交规范 eslint代码规范 单元测试
+- github action 持续集成
 ## 管理整个项目包 + 初始化vue3.x+typescript组件库项目 + 预览website项目
 ## 组件库依赖管理 Yarn Workspace 
 Workspace 能更好的统一管理有多个项目的仓库，既可在每个项目下使用独立的 package.json 管理依赖，又可便利的享受一条 yarn 命令安装或者升级所有依赖等。更重要的是可以使多个项目共享同一个 node_modules 目录，提升开发效率和降低磁盘空间占用。
@@ -301,14 +305,15 @@ vscode 只会读取项目根节点的.eslintignore
 ## husky
 ### 初始化 [代码](https://github.com/zjjaxx/sports_boy/blob/main/scripts/verifyCommit.js)
 ```
-  "initHusky": "husky install && husky add .husky/commit-msg 'node scripts/verifyCommit.js \n yarn run lint \n yarn run start:test '",
+  "initHusky": "husky install && husky add .husky/pre-commit 'node scripts/verifyCommit.js \n yarn run lint \n yarn run start:test '",
 
 ```
+注意：husky 的文件名必须为`pre-commit`,否则`lint-staged`自动`git add `到`commit`会有问题
 ### lint-staged 每次提交只校验git缓存修改的文件
 
 ```
 //...
-    "initHusky": "husky install && husky add .husky/commit-msg 'node scripts/verifyCommit.js\nyarn run lint-staged\nyarn run start:test'",
+    "initHusky": "husky install && husky add .husky/pre-commit 'node scripts/verifyCommit.js\nyarn run lint-staged\nyarn run start:test'",
 //...
  "lint-staged":{
     "packages/sports_boy/src/**/*.{vue,js,ts}":"yarn run lint"
@@ -321,4 +326,16 @@ vscode 只会读取项目根节点的.eslintignore
     //...
     "packages/sports_boy/src/**/*.{vue,js,ts,css,scss}": "prettier --write"
   },
+```
+## github action 持续集成
+在github 使用action 的node 模版
+修改命令
+```
+  - run: npm i -g yarn
+  - run: yarn
+  - run: yarn run start:test
+```
+### 配置ci 图标
+```
+![ci](https://github.com/zjjaxx/sports_boy/blob/main/.github/workflows/sports_boy.js.yml/badge.svg)
 ```
