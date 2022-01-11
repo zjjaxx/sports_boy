@@ -1,5 +1,5 @@
 
-![ci](https://github.com/zjjaxx/sports_boy/blob/main/.github/workflows/sports_boy.js.yml/badge.svg)
+![ci](https://github.com/zjjaxx/sports_boy/actions/workflows/sports_boy.js.yml/badge.svg)
 ---
 title: sports_boy
 date: 2021-11-20 10:20:21
@@ -337,5 +337,5 @@ vscode 只会读取项目根节点的.eslintignore
 ```
 ### 配置ci 图标
 ```
-![ci](https://github.com/zjjaxx/sports_boy/blob/main/.github/workflows/sports_boy.js.yml/badge.svg)
+![ci](https://github.com/zjjaxx/sports_boy/actions/workflows/sports_boy.js.yml/badge.svg)
 ```
