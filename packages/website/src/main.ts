@@ -13,8 +13,9 @@ import {
   ZIcon,
   ZButton,
   ZButtonGroup,
+  ZTable,
+  ZTableColumn,
 } from "sports_boy";
-
 const app = createApp(App);
 // app.use(SportsBoy)
 app
@@ -27,5 +28,7 @@ app
   .use(ZIcon)
   .use(ZButton)
   .use(ZButtonGroup)
+  .use(ZTable)
+  .use(ZTableColumn)
   .use(ZHeader);
 app.mount("#app");

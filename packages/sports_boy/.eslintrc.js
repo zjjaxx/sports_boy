@@ -9,6 +9,7 @@ module.exports = {
   globals: {
     withDefaults: "readonly",
     defineProps: "readonly",
+    defineExpose: "readonly",
   },
   // extends 申明检查时使用那些规范，可省略eslint-config-
   extends: [

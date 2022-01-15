@@ -8,6 +8,12 @@ const type = ref();
 const typeChange = (_type: string) => {
   type.value = _type;
 };
+
+const tableData = [
+  { name: "zjjaxx", address: "杭州市", date: "2012-10-02" },
+  { date: "2012-10-02", address: "杭州市", name: "zx" },
+  { date: "2012-10-02", name: "zy", address: "杭州市" },
+];
 </script>
 
 <template>
@@ -321,6 +327,14 @@ const typeChange = (_type: string) => {
         <ZButton icon="share" round>按钮组</ZButton>
       </ZButtonGroup>
     </ZCol>
+  </ZRow>
+
+  <ZRow>
+    <ZTable :tableData="tableData">
+      <ZTableColumn propKey="date" label="时间"></ZTableColumn>
+      <ZTableColumn propKey="name" label="名字"></ZTableColumn>
+      <ZTableColumn propKey="address" label="地址"></ZTableColumn>
+    </ZTable>
   </ZRow>
 </template>
 

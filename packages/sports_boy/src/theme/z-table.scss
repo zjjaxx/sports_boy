@@ -1,0 +1,7 @@
+@use "./color";
+@use "./size";
+.z-table {
+  width: 100%;
+  color: color.$mainFontColor;
+  font-size: size.$fontSize;
+}
