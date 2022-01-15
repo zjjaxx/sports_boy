@@ -1,0 +1,3 @@
+<template>
+  <ZIcon></ZIcon>
+</template>

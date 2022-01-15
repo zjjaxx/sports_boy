@@ -16,6 +16,8 @@ import {
   ZTable,
   ZTableColumn,
 } from "sports_boy";
+import router from "@/route/index";
+
 const app = createApp(App);
 // app.use(SportsBoy)
 app
@@ -31,4 +33,5 @@ app
   .use(ZTable)
   .use(ZTableColumn)
   .use(ZHeader);
+app.use(router);
 app.mount("#app");

@@ -4,6 +4,7 @@ import { matchParentComponentName } from "@/util/index";
 interface Props {
   label: string;
   propKey: string;
+  width: string | number;
 }
 const props = defineProps<Props>();
 const context = getCurrentInstance();

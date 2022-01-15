@@ -1,7 +1,27 @@
 @use "./color";
 @use "./size";
 .z-table {
+  display: block;
   width: 100%;
   color: color.$mainFontColor;
   font-size: size.$fontSize;
+  thead {
+    display: block;
+    color: color.$secondaryFontColor;
+    font-weight: 500;
+  }
+  tbody {
+    display: block;
+  }
+  tr {
+    display: block;
+  }
+  th,
+  td {
+    display: inline-block;
+    padding: 12px 0;
+    box-sizing: border-box;
+    text-align: left;
+    border-bottom: 1px solid color.$borderColorThird;
+  }
 }

@@ -1714,6 +1714,11 @@
     "@vue/compiler-dom" "3.2.22"
     "@vue/shared" "3.2.22"
 
+"@vue/devtools-api@^6.0.0-beta.11", "@vue/devtools-api@^6.0.0-beta.18":
+  version "6.0.0-beta.21.1"
+  resolved "http://172.19.0.208:4873/@vue%2fdevtools-api/-/devtools-api-6.0.0-beta.21.1.tgz#f1410f53c42aa67fa3b01ca7bdba891f69d7bc97"
+  integrity sha512-FqC4s3pm35qGVeXRGOjTsRzlkJjrBLriDS9YXbflHLsfA9FrcKzIyWnLXoNm+/7930E8rRakXuAc2QkC50swAw==
+
 "@vue/reactivity@3.2.22", "@vue/reactivity@^3.2.19":
   version "3.2.22"
   resolved "https://registry.yarnpkg.com/@vue/reactivity/-/reactivity-3.2.22.tgz#88655c0b4febc561136e6550e329039f860caa0a"
@@ -8269,6 +8274,13 @@ vue-eslint-parser@^8.0.1:
     lodash "^4.17.21"
     semver "^7.3.5"
 
+vue-router@4:
+  version "4.0.12"
+  resolved "http://172.19.0.208:4873/vue-router/-/vue-router-4.0.12.tgz#8dc792cddf5bb1abcc3908f9064136de7e13c460"
+  integrity sha1-jceSzd9bsavMOQj5BkE23n4TxGA=
+  dependencies:
+    "@vue/devtools-api" "^6.0.0-beta.18"
+
 vue-tsc@^0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/vue-tsc/-/vue-tsc-0.3.0.tgz#3b3872bf4f1d2e4409b57adbd826032e253db406"
@@ -8286,6 +8298,13 @@ vue@^3.2.16:
     "@vue/runtime-dom" "3.2.22"
     "@vue/server-renderer" "3.2.22"
     "@vue/shared" "3.2.22"
+
+vuex@^4.0.2:
+  version "4.0.2"
+  resolved "https://registry.npmmirror.com/vuex/download/vuex-4.0.2.tgz#f896dbd5bf2a0e963f00c67e9b610de749ccacc9"
+  integrity sha512-M6r8uxELjZIK8kTKDGgZTYX/ahzblnzC4isU1tpmEuOIIKmV+TRdc+H4s8ds2NuZ7wpUTdGRzJRtoj+lI+pc0Q==
+  dependencies:
+    "@vue/devtools-api" "^6.0.0-beta.11"
 
 w3c-hr-time@^1.0.2:
   version "1.0.2"
