@@ -1,37 +1,24 @@
 @use "./color";
 @use "./size";
 @use "./global";
-.table-wrapper {
-  position: relative;
-}
 .z-table {
-  display: block;
   width: 100%;
   color: color.$mainFontColor;
   font-size: size.$fontSize;
   overflow: auto;
   thead {
-    display: block;
+    display: flex;
+    width: 100%;
     color: color.$secondaryFontColor;
     font-weight: 500;
-  }
-  .header-fixed {
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    background-color: #fff;
-    z-index: 10;
-  }
-  .visible-hidden {
-    visibility: hidden;
   }
   tbody {
     display: block;
     overflow: auto;
   }
   tr {
-    display: block;
+    display: flex;
+    width: 100%;
     transition: background-color 0.25s ease;
     &:hover {
       background-color: #f5f7fa;
@@ -44,6 +31,12 @@
     box-sizing: border-box;
     text-align: left;
     border-bottom: 1px solid color.$borderColorThird;
+  }
+  .flex-grow {
+    flex-grow: 0;
+  }
+  .flex-1 {
+    flex: 1;
   }
   .th-fixed {
     position: fixed;

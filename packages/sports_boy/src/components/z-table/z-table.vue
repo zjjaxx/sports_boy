@@ -1,7 +1,7 @@
 <template>
   <table
     ref="table"
-    class="z-table"
+    class="z-table flex flex-column"
     :class="[border && 'z-table-border']"
     :style="{ height: parseInt(height + '') + 'px' }"
   >
@@ -10,7 +10,8 @@
         <th
           v-for="(item, index) in tableColumnList"
           :key="index"
-          :style="{ width: calcWidth(item.width) }"
+          :class="[item.width ? 'flex-grow-0' : 'flex-1']"
+          :style="{ width: parseFloat(item.width + '') + 'px' }"
         >
           <div class="cell">{{ item.label }}</div>
         </th>
@@ -21,7 +22,10 @@
         <td
           v-for="(value, key, _index) in item"
           :key="key"
-          :style="{ width: calcWidth(tableColumnList[_index].width) }"
+          :class="[tableColumnList[_index].width ? 'flex-grow-0' : 'flex-1']"
+          :style="{
+            width: parseInt(tableColumnList[_index].width + '') + 'px',
+          }"
         >
           <div class="cell">{{ value }}</div>
         </td>
@@ -31,8 +35,7 @@
   </table>
 </template>
 <script setup lang="ts">
-import { ref, computed, toRefs, onMounted, onUnmounted } from "vue";
-import { debounce } from "@/util/index";
+import { ref, computed, toRefs, onMounted } from "vue";
 interface Props {
   // 数据源
   tableData: Array<Record<string, unknown>>;
@@ -68,36 +71,10 @@ const rowList = computed(() => {
     return _item;
   });
 });
-// 计算列宽度
-const table = ref(null);
-const calcWidth = (width: string | number) => {
-  if (width === undefined) {
-    const fixTotalWidth = tableColumnList.value
-      .filter((column) => column.width)
-      .map((item) => item.width)
-      .reduce((a, b) => {
-        return parseInt(a + "") + parseInt(b + "");
-      }, 0);
-    const flexWidthList = tableColumnList.value.filter(
-      (column) => column.width === undefined
-    );
-    const singleFlexWidth =
-      ((table.value as unknown as HTMLElement).clientWidth -
-        (fixTotalWidth as number)) /
-      flexWidthList.length;
-    return singleFlexWidth + "px";
-  } else {
-    return parseInt(width + "") + "px";
-  }
-};
+
 // 动态计算tbody高度
 const thead = ref(null);
 const tbodyHeight = ref();
-const callBack = debounce(() => {
-  console.log("trigger----");
-  // 触发页面刷新
-  tableColumnList.value = [...tableColumnList.value];
-}, 300);
 onMounted(() => {
   // 如果传入了height
   if (height.value) {
@@ -105,11 +82,6 @@ onMounted(() => {
       parseInt(height.value + "") -
       (thead.value as unknown as HTMLElement).offsetHeight;
   }
-  // 监听窗口尺寸变化
-  window.addEventListener("resize", callBack);
-});
-onUnmounted(() => {
-  window.removeEventListener("resize", callBack);
 });
 // 向子组件暴露tableColumnRegister 方法
 defineExpose({
