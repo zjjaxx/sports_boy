@@ -13,6 +13,7 @@ import {
   toRaw,
   onMounted,
   ref,
+  onUnmounted,
 } from "vue";
 export default defineComponent({
   props: {
@@ -80,14 +81,15 @@ export default defineComponent({
       };
     };
     const spanStyle = ref(computeSpanStyle());
+    const callBack = debounce(() => {
+      spanStyle.value = computeSpanStyle();
+    }, 300);
     onMounted(() => {
       // 监听窗口尺寸变化
-      window.addEventListener(
-        "resize",
-        debounce(() => {
-          spanStyle.value = computeSpanStyle();
-        }, 300)
-      );
+      window.addEventListener("resize", callBack);
+    });
+    onUnmounted(() => {
+      window.removeEventListener("resize", callBack);
     });
     // gutter样式
     const gutter = inject<number>("gutter") || 0;

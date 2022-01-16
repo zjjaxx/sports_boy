@@ -1716,7 +1716,7 @@
 
 "@vue/devtools-api@^6.0.0-beta.11", "@vue/devtools-api@^6.0.0-beta.18":
   version "6.0.0-beta.21.1"
-  resolved "http://172.19.0.208:4873/@vue%2fdevtools-api/-/devtools-api-6.0.0-beta.21.1.tgz#f1410f53c42aa67fa3b01ca7bdba891f69d7bc97"
+  resolved "https://registry.yarnpkg.com/@vue%2fdevtools-api/-/devtools-api-6.0.0-beta.21.1.tgz#f1410f53c42aa67fa3b01ca7bdba891f69d7bc97"
   integrity sha512-FqC4s3pm35qGVeXRGOjTsRzlkJjrBLriDS9YXbflHLsfA9FrcKzIyWnLXoNm+/7930E8rRakXuAc2QkC50swAw==
 
 "@vue/reactivity@3.2.22", "@vue/reactivity@^3.2.19":
@@ -8276,7 +8276,7 @@ vue-eslint-parser@^8.0.1:
 
 vue-router@4:
   version "4.0.12"
-  resolved "http://172.19.0.208:4873/vue-router/-/vue-router-4.0.12.tgz#8dc792cddf5bb1abcc3908f9064136de7e13c460"
+  resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-4.0.12.tgz#8dc792cddf5bb1abcc3908f9064136de7e13c460"
   integrity sha1-jceSzd9bsavMOQj5BkE23n4TxGA=
   dependencies:
     "@vue/devtools-api" "^6.0.0-beta.18"
