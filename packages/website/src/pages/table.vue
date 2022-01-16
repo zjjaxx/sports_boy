@@ -23,7 +23,7 @@
   <ZRow class="tab-wrapper">
     <ZTable :tableData="tableData2" border height="300">
       <ZTableColumn
-        width="160"
+        width="80"
         fixed="left"
         propKey="date"
         label="时间"
@@ -31,7 +31,7 @@
       <ZTableColumn width="260" propKey="name" label="名字"></ZTableColumn>
       <ZTableColumn propKey="address" label="地址"></ZTableColumn>
       <ZTableColumn
-        width="160"
+        width="260"
         fixed="left"
         propKey="code"
         label="编码"

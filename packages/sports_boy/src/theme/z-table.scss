@@ -1,17 +1,19 @@
 @use "./color";
 @use "./size";
 @use "./global";
+.z-table-wrapper {
+  position: relative;
+  overflow: auto;
+}
 .z-table {
   width: 100%;
   color: color.$mainFontColor;
   font-size: size.$fontSize;
-  overflow: auto;
+  // 去除边距
+  border-collapse: collapse;
   thead {
-    display: flex;
-    align-self: baseline;
     color: color.$secondaryFontColor;
     font-weight: 500;
-    min-width: 100%;
   }
   .z-header-sticky {
     position: sticky;
@@ -20,13 +22,8 @@
     z-index: 10;
   }
   tbody {
-    align-self: baseline;
-    min-width: 100%;
   }
   tr {
-    display: flex;
-    min-width: 100%;
-    align-self: baseline;
     transition: background-color 0.25s ease;
     &:hover {
       background-color: #f5f7fa;
@@ -37,16 +34,8 @@
     padding: 12px 0;
     box-sizing: border-box;
     text-align: left;
-    white-space: nowrap;
     border-bottom: 1px solid color.$borderColorThird;
     transition: background-color 0.25s ease;
-  }
-  .flex-0 {
-    flex-grow: 0;
-    flex-shrink: 0;
-  }
-  .flex-1 {
-    flex: 1;
   }
   .z-th-sticky-left {
     position: sticky;
