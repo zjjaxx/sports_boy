@@ -8,17 +8,25 @@
   overflow: auto;
   thead {
     display: flex;
-    width: 100%;
+    align-self: baseline;
     color: color.$secondaryFontColor;
     font-weight: 500;
+    min-width: 100%;
+  }
+  .z-header-sticky {
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    z-index: 10;
   }
   tbody {
-    display: block;
-    overflow: auto;
+    align-self: baseline;
+    min-width: 100%;
   }
   tr {
     display: flex;
-    width: 100%;
+    min-width: 100%;
+    align-self: baseline;
     transition: background-color 0.25s ease;
     &:hover {
       background-color: #f5f7fa;
@@ -26,23 +34,31 @@
   }
   th,
   td {
-    display: inline-block;
     padding: 12px 0;
     box-sizing: border-box;
     text-align: left;
+    white-space: nowrap;
     border-bottom: 1px solid color.$borderColorThird;
+    transition: background-color 0.25s ease;
   }
-  .flex-grow {
+  .flex-0 {
     flex-grow: 0;
+    flex-shrink: 0;
   }
   .flex-1 {
     flex: 1;
   }
-  .th-fixed {
-    position: fixed;
+  .z-th-sticky-left {
+    position: sticky;
+    left: 0;
+    background-color: #fff;
+    z-index: 10;
   }
-  td {
-    transition: background-color 0.25s ease;
+  .z-th-sticky-right {
+    position: sticky;
+    right: 0;
+    background-color: #fff;
+    z-index: 10;
   }
   .cell {
     padding: 10px;

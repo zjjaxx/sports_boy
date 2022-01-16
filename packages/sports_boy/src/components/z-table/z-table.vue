@@ -1,28 +1,31 @@
 <template>
   <table
     ref="table"
-    class="z-table flex flex-column"
+    class="z-table z-flex z-flex-column"
     :class="[border && 'z-table-border']"
     :style="{ height: parseInt(height + '') + 'px' }"
   >
-    <thead ref="thead">
+    <thead ref="thead" :class="[height && 'z-header-sticky']">
       <tr>
         <th
           v-for="(item, index) in tableColumnList"
           :key="index"
-          :class="[item.width ? 'flex-grow-0' : 'flex-1']"
+          :class="[
+            item.width ? 'flex-0' : 'flex-1',
+            item.fixed ? 'z-th-sticky-' + item.fixed : '',
+          ]"
           :style="{ width: parseFloat(item.width + '') + 'px' }"
         >
           <div class="cell">{{ item.label }}</div>
         </th>
       </tr>
     </thead>
-    <tbody :style="{ height: tbodyHeight + 'px' }">
+    <tbody class="z-flex z-flex-column">
       <tr v-for="(item, index) in rowList" :key="index">
         <td
           v-for="(value, key, _index) in item"
           :key="key"
-          :class="[tableColumnList[_index].width ? 'flex-grow-0' : 'flex-1']"
+          :class="[tableColumnList[_index].width ? 'flex-0' : 'flex-1']"
           :style="{
             width: parseInt(tableColumnList[_index].width + '') + 'px',
           }"
@@ -35,7 +38,7 @@
   </table>
 </template>
 <script setup lang="ts">
-import { ref, computed, toRefs, onMounted } from "vue";
+import { ref, computed, toRefs } from "vue";
 interface Props {
   // 数据源
   tableData: Array<Record<string, unknown>>;
@@ -52,6 +55,7 @@ interface TableColumnType {
   label: string;
   propKey: string;
   width: string | number;
+  fixed: boolean;
   [propName: string]: any;
 }
 const tableColumnList = ref<TableColumnType[]>([]);
@@ -70,18 +74,6 @@ const rowList = computed(() => {
     });
     return _item;
   });
-});
-
-// 动态计算tbody高度
-const thead = ref(null);
-const tbodyHeight = ref();
-onMounted(() => {
-  // 如果传入了height
-  if (height.value) {
-    tbodyHeight.value =
-      parseInt(height.value + "") -
-      (thead.value as unknown as HTMLElement).offsetHeight;
-  }
 });
 // 向子组件暴露tableColumnRegister 方法
 defineExpose({
