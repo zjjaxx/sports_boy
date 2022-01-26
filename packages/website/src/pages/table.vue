@@ -43,7 +43,9 @@
   <ZRow class="tab-wrapper">
     <ZTable :tableData="tableData">
       <ZTableColumn width="160" propKey="date" label="时间">
-        hhha
+        <template v-slot:default="scope">
+          <h2>{{ scope.value }}</h2>
+        </template>
       </ZTableColumn>
       <ZTableColumn width="260" propKey="name" label="名字"></ZTableColumn>
       <ZTableColumn propKey="address" label="地址"></ZTableColumn>

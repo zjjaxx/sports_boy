@@ -35,5 +35,6 @@ module.exports = {
   rules: {
     camelcase: "off",
     "spaced-comment": "off",
+    "vue/no-dupe-keys": "off",
   },
 };
