@@ -36,8 +36,17 @@
         propKey="code"
         label="编码"
       ></ZTableColumn>
-      <ZTableColumn width="560" propKey="mobile" label="手机号"></ZTableColumn>
-      <ZTableColumn propKey="option" label="编辑"></ZTableColumn>
+      <ZTableColumn width="860" propKey="mobile" label="手机号"></ZTableColumn>
+      <ZTableColumn fixed="right" propKey="option" label="编辑"></ZTableColumn>
+    </ZTable>
+  </ZRow>
+  <ZRow class="tab-wrapper">
+    <ZTable :tableData="tableData">
+      <ZTableColumn width="160" propKey="date" label="时间">
+        hhha
+      </ZTableColumn>
+      <ZTableColumn width="260" propKey="name" label="名字"></ZTableColumn>
+      <ZTableColumn propKey="address" label="地址"></ZTableColumn>
     </ZTable>
   </ZRow>
 </template>

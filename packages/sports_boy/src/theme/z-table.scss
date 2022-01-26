@@ -19,13 +19,15 @@
     position: sticky;
     top: 0;
     background-color: #fff;
-    z-index: 10;
+    z-index: 20;
   }
   tbody {
   }
   tr {
     transition: background-color 0.25s ease;
-    &:hover {
+    &:hover,
+    &:hover .z-th-sticky-left,
+    &:hover .z-th-sticky-right {
       background-color: #f5f7fa;
     }
   }
@@ -42,6 +44,18 @@
     left: 0;
     background-color: #fff;
     z-index: 10;
+    &::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: -1px;
+      width: 30px;
+      transform: translate(100%);
+      transition: box-shadow 0.3s;
+      content: "";
+      pointer-events: none;
+      box-shadow: inset 10px 0 8px -8px #00000026;
+    }
   }
   .z-th-sticky-right {
     position: sticky;

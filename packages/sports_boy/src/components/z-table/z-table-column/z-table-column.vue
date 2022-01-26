@@ -18,8 +18,9 @@ const isMatchParentComponent = matchParentComponentName(
   "ZTable"
 );
 if (isMatchParentComponent) {
-  (context?.parent as ComponentInternalInstance).exposed?.tableColumnRegister(
-    props
-  );
+  (context?.parent as ComponentInternalInstance).exposed?.tableColumnRegister({
+    ...props,
+    slots: context?.slots,
+  });
 }
 </script>
