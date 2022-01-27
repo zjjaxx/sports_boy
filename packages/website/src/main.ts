@@ -33,5 +33,6 @@ app
   .use(ZTable)
   .use(ZTableColumn)
   .use(ZHeader);
+
 app.use(router);
 app.mount("#app");

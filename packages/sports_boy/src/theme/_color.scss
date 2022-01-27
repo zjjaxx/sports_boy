@@ -1,42 +1,42 @@
 // 主题色
-$primaryColor: #409eff;
-$hoverBaseColor: #c6e2ff;
+$primaryColor: #409eff !default;
+$hoverPrimaryColor: #66b1ff !default;
 
 // 成功颜色
-$successColor: #67c23a;
-$hoverSuccessColor: #85ce61;
+$successColor: #67c23a !default;
+$hoverSuccessColor: #85ce61 !default;
 
 // 警告颜色
-$warningColor: #e6a23c;
-$hoverWarningColor: #ebb563;
+$warningColor: #e6a23c !default;
+$hoverWarningColor: #ebb563 !default;
 // danger颜色
-$dangerColor: #f56c6c;
-$hoverDangerColor: #f78989;
+$dangerColor: #f56c6c !default;
+$hoverDangerColor: #f78989 !default;
 // 通知颜色
-$infoColor: #909399;
-$hoverInfoColor: #a6a9ad;
+$infoColor: #909399 !default;
+$hoverInfoColor: #a6a9ad !default;
 // 普通按钮hover颜色
-$hoverBaseBg: #ecf5ff;
-$hoverPrimaryColor: #66b1ff;
+$hoverBaseBg: #ecf5ff !default;
+$hoverBaseColor: #c6e2ff !default;
 // 主要文字
-$mainFontColor: #303133;
+$mainFontColor: #303133 !default;
 // 常规文字
-$baseFontColor: #606266;
+$baseFontColor: #606266 !default;
 // 次要文字
-$secondaryFontColor: #909399;
+$secondaryFontColor: #909399 !default;
 // 占位文字
-$placeholderFontColor: #c0c4cc;
+$placeholderFontColor: #c0c4cc !default;
 
 // 一级边框
-$borderColorOne: #dcdfe6;
+$borderColorOne: #dcdfe6 !default;
 // 二级边框
-$borderColorTwo: #e4e7ed;
+$borderColorTwo: #e4e7ed !default;
 // 三级边框
-$borderColorThird: #ebeef5;
+$borderColorThird: #ebeef5 !default;
 // 四级边框
-$borderColorFourth: #f2f6fc;
+$borderColorFourth: #f2f6fc !default;
 
 // 黑色
-$black: #000;
+$black: #000 !default;
 // 白色
-$white: #fff;
+$white: #fff !default;

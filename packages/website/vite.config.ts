@@ -8,6 +8,16 @@ export default defineConfig({
   server: {
     open: true,
   },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@use "${path.resolve(
+          __dirname,
+          "./src/assets/styles/theme.scss"
+        )}";`,
+      },
+    },
+  },
   plugins: [
     vue(),
     Components(),
@@ -18,7 +28,7 @@ export default defineConfig({
           libraryName: "sports_boy",
           esModule: true,
           resolveStyle: (name) => {
-            return `../theme/${name}.css`;
+            return `../src/theme/${name}.scss`;
           },
         },
       ],

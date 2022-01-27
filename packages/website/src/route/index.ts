@@ -10,6 +10,10 @@ const routes: VueRouter.RouteRecordRaw[] = [
         redirect: "/layout",
       },
       {
+        path: "theme",
+        component: () => import("@/pages/theme.vue"),
+      },
+      {
         path: "layout",
         component: () => import("@/pages/layout.vue"),
       },
