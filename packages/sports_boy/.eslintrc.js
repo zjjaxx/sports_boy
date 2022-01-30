@@ -10,6 +10,7 @@ module.exports = {
     withDefaults: "readonly",
     defineProps: "readonly",
     defineExpose: "readonly",
+    defineEmits: "readonly",
   },
   // extends 申明检查时使用那些规范，可省略eslint-config-
   extends: [

@@ -30,6 +30,10 @@ const routes: VueRouter.RouteRecordRaw[] = [
         component: () => import("@/pages/button.vue"),
       },
       {
+        path: "checkbox",
+        component: () => import("@/pages/checkbox.vue"),
+      },
+      {
         path: "table",
         component: () => import("@/pages/table.vue"),
       },

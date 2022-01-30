@@ -1,4 +1,10 @@
-import { App, ComponentCustomOptions, Plugin, VNode } from "vue";
+import {
+  App,
+  ComponentCustomOptions,
+  Plugin,
+  VNode,
+  ComponentInternalInstance,
+} from "vue";
 interface CustomComponent extends ComponentCustomOptions {
   name?: string;
 }
@@ -32,7 +38,7 @@ export const matchChildComponentName = (
 };
 // 匹配父组件名
 export const matchParentComponentName = (
-  parentVnode: VNode | undefined,
+  parentVnode: ComponentInternalInstance | undefined | null,
   parentVnodeName: string
 ) => {
   if (!parentVnode) {
@@ -41,6 +47,24 @@ export const matchParentComponentName = (
   if (parentVnode.type && (parentVnode.type as CustomComponent).name)
     return parentVnodeName === (parentVnode.type as CustomComponent).name;
   else {
+    return false;
+  }
+};
+// 递归获取父组件实例
+export const getParentByNameRecursive = (
+  parentVnode: ComponentInternalInstance | undefined | null,
+  parentVnodeName: string
+) => {
+  if (!parentVnode) {
+    return false;
+  }
+  if (parentVnode.type && (parentVnode.type as CustomComponent).name) {
+    if (parentVnodeName === (parentVnode.type as CustomComponent).name) {
+      return parentVnode;
+    } else {
+      return getParentByNameRecursive(parentVnode.parent, parentVnodeName);
+    }
+  } else {
     return false;
   }
 };
@@ -60,4 +84,24 @@ export const debounce = (fn: () => void, time: number) => {
       fn();
     }, time);
   };
+};
+// 深拷贝
+export const deepClone = (target) => {
+  let copy;
+  if (typeof target === "object") {
+    if (target instanceof Array) {
+      copy = [];
+      target.forEach((item) => {
+        copy.push(deepClone(item));
+      });
+    } else {
+      copy = {};
+      for (const key in target) {
+        copy[key] = deepClone(target[key]);
+      }
+    }
+  } else {
+    copy = target;
+  }
+  return copy;
 };

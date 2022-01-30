@@ -1,0 +1,137 @@
+* {
+  border: 0;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+}
+.z-flex {
+  display: flex;
+}
+.z-flex-column {
+  flex-direction: column;
+}
+.z-flex-wrap {
+  flex-wrap: wrap;
+}
+.z-justify-between {
+  justify-content: space-between;
+}
+.z-justify-around {
+  justify-content: space-around;
+}
+.z-justify-center {
+  justify-content: center;
+}
+.z-justify-start {
+  justify-content: flex-start;
+}
+.z-justify-end {
+  justify-content: flex-end;
+}
+.z-align-start {
+  align-items: flex-start;
+}
+.z-align-center {
+  align-items: center;
+}
+.z-align-end {
+  align-items: flex-end;
+}
+.z-clearfix:after {
+  clear: both;
+  content: " ";
+  display: block;
+}
+.base-shadow {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.04);
+}
+.light-shadow {
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+}
+@-webkit-keyframes loading {
+  0% {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
+@keyframes loading {
+  0% {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
+.z-checkbox {
+  color: #606266;
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 14px;
+  font-weight: 500;
+  margin-right: 30px;
+  position: relative;
+}
+.z-checkbox .z-checkbox-input {
+  cursor: pointer;
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+.z-checkbox .z-checkbox-input-wrapper {
+  background-color: #fff;
+  border: 1px solid #dcdfe6;
+  border-radius: 2px;
+  box-sizing: border-box;
+  display: inline-block;
+  height: 14px;
+  margin-right: 10px;
+  position: relative;
+  transition: border-color 0.25s cubic-bezier(0.71, -0.46, 0.29, 1.46),
+    background-color 0.25s cubic-bezier(0.71, -0.46, 0.29, 1.46);
+  width: 14px;
+}
+.z-checkbox .z-checkbox-input-wrapper:after {
+  border: 1px solid #fff;
+  border-left: 0;
+  border-top: 0;
+  box-sizing: content-box;
+  content: "";
+  height: 7px;
+  left: 4px;
+  position: absolute;
+  top: 1px;
+  transform: rotate(45deg);
+  width: 3px;
+}
+.z-checkbox .z-checkbox-indeterminate,
+.z-checkbox .z-checked {
+  background-color: #409eff;
+}
+.z-checkbox .z-checkbox-indeterminate:after {
+  background-color: #fff;
+  border: none;
+  content: "";
+  display: block;
+  height: 1px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 6px;
+}
+.z-checkbox .z-label-checked {
+  color: #409eff;
+}
+.z-checkbox-disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+.z-checkbox-disabled .z-checkbox-input {
+  cursor: not-allowed;
+}

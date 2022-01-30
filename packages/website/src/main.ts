@@ -13,8 +13,10 @@ import {
   ZIcon,
   ZButton,
   ZButtonGroup,
+  ZCheckbox,
   ZTable,
   ZTableColumn,
+  ZCheckboxGroup,
 } from "sports_boy";
 import router from "@/route/index";
 
@@ -30,8 +32,10 @@ app
   .use(ZIcon)
   .use(ZButton)
   .use(ZButtonGroup)
+  .use(ZCheckbox)
   .use(ZTable)
   .use(ZTableColumn)
+  .use(ZCheckboxGroup)
   .use(ZHeader);
 
 app.use(router);

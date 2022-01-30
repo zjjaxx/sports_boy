@@ -131,7 +131,7 @@
   <ZRow class="row-1">
     <ZCol :span="4">
       <ZButton
-        disable
+        disabled
         type="primary"
         style="margin-left: 10px"
         @click="typeChange('primary')"
@@ -140,7 +140,7 @@
     </ZCol>
     <ZCol :span="4">
       <ZButton
-        disable
+        disabled
         type="info"
         style="margin-left: 10px"
         @click="typeChange('info')"
@@ -149,7 +149,7 @@
     </ZCol>
     <ZCol :span="4">
       <ZButton
-        disable
+        disabled
         type="warning"
         style="margin-left: 10px"
         @click="typeChange('warning')"
@@ -158,7 +158,7 @@
     </ZCol>
     <ZCol :span="4">
       <ZButton
-        disable
+        disabled
         type="danger"
         style="margin-left: 10px"
         @click="typeChange('danger')"
@@ -167,7 +167,7 @@
     </ZCol>
     <ZCol :span="4">
       <ZButton
-        disable
+        disabled
         type="success"
         style="margin-left: 10px"
         @click="typeChange('success')"

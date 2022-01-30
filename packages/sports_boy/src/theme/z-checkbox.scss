@@ -1,0 +1,78 @@
+@use "./global";
+@use "./color";
+@use "./size";
+
+.z-checkbox {
+  margin-right: 30px;
+  display: inline-flex;
+  position: relative;
+  color: color.$baseFontColor;
+  font-weight: 500;
+  font-size: size.$fontSize;
+  cursor: pointer;
+  .z-checkbox-input {
+    position: absolute;
+    z-index: 1;
+    opacity: 0;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    cursor: pointer;
+  }
+  .z-checkbox-input-wrapper {
+    margin-right: 10px;
+    display: inline-block;
+    position: relative;
+    border: 1px solid color.$borderColorOne;
+    border-radius: 2px;
+    box-sizing: border-box;
+    width: 14px;
+    height: 14px;
+    background-color: #fff;
+    transition: border-color 0.25s cubic-bezier(0.71, -0.46, 0.29, 1.46),
+      background-color 0.25s cubic-bezier(0.71, -0.46, 0.29, 1.46);
+
+    &::after {
+      content: "";
+      position: absolute;
+      box-sizing: content-box;
+      border: 1px solid #fff;
+      border-left: 0;
+      border-top: 0;
+      height: 7px;
+      width: 3px;
+      top: 1px;
+      left: 4px;
+      transform: rotate(45deg);
+    }
+  }
+  .z-checked {
+    background-color: color.$primaryColor;
+  }
+  .z-checkbox-indeterminate {
+    background-color: color.$primaryColor;
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      background-color: #fff;
+      height: 1px;
+      width: 6px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border: none;
+    }
+  }
+  .z-label-checked {
+    color: color.$primaryColor;
+  }
+}
+.z-checkbox-disabled {
+  @include global.disable();
+  .z-checkbox-input {
+    cursor: not-allowed;
+  }
+}

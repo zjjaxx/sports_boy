@@ -51,7 +51,7 @@ describe("ZButton", () => {
   test("ZButton disable 属性", async () => {
     const wrapper = mount(ZButton, {
       props: {
-        disable: true,
+        disabled: true,
       },
     });
     expect(wrapper.find(".z-disable").exists()).toBe(true);

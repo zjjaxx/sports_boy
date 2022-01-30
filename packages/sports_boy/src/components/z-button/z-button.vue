@@ -1,6 +1,6 @@
 <template>
   <button
-    :disabled="disable"
+    :disabled="disabled"
     :type="nativeType"
     :class="[
       'z-button',
@@ -8,7 +8,7 @@
       props.type && 'z-type-' + props.type,
       round && 'z-round',
       circle && 'z-circle',
-      (disable || loading) && 'z-disable',
+      (disabled || loading) && 'z-disable',
       isButtonGroup && props.type
         ? 'z-button-group-item-type'
         : 'z-button-group-item-default',
@@ -30,7 +30,7 @@
   </button>
 </template>
 <script setup lang="ts">
-import { getCurrentInstance, useSlots, VNode } from "vue";
+import { getCurrentInstance, useSlots } from "vue";
 import ZIcon from "../z-icon/z-icon.vue";
 import { matchParentComponentName } from "@/util/index";
 interface Props {
@@ -43,7 +43,7 @@ interface Props {
   // 是否圆形按钮
   circle?: boolean;
   //是否禁用状态
-  disable?: boolean;
+  disabled?: boolean;
   //图标类名
   icon?: string;
   // 是否加载中状态
@@ -55,8 +55,5 @@ const props = defineProps<Props>();
 const slots = useSlots();
 // button group
 const parent = getCurrentInstance()?.parent;
-const isButtonGroup = matchParentComponentName(
-  parent as unknown as VNode,
-  "ZButtonGroup"
-);
+const isButtonGroup = matchParentComponentName(parent, "ZButtonGroup");
 </script>
