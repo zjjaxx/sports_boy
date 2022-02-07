@@ -19,7 +19,7 @@
     </span>
     <span :class="[modelValue && 'z-label-checked']">
       <slot>
-        <span>{label}</span>
+        <span>{{ label }}</span>
       </slot>
     </span>
   </span>
