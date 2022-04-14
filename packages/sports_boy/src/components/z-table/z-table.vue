@@ -1,11 +1,15 @@
 <script lang="tsx">
 import { defineComponent, ref, toRefs, onMounted, computed } from "vue";
+import ZCheckbox from "@/components/z-checkbox/z-checkbox.vue";
+import ZCheckboxGroup from "@/components/z-checkbox-group/z-checkbox-group.vue";
 // 子组件类型
 interface TableColumnType {
   label: string;
   propKey: string;
-  width: string | number;
-  fixed: boolean;
+  width?: string | number;
+  fixed?: boolean;
+  type?: "selection" | "index" | "expand";
+  sortable?: boolean;
   [propName: string]: any;
 }
 export default defineComponent({
@@ -18,7 +22,10 @@ export default defineComponent({
     // 是否带边框
     border: Boolean,
     // 高度
-    height: [String, Number],
+    height: {
+      type: [String, Number],
+      default: 0,
+    },
   },
   setup(props, { expose, slots }) {
     const { tableData, border, height } = toRefs(props);
@@ -27,6 +34,7 @@ export default defineComponent({
     const tableColumnRegister = (item: TableColumnType) => {
       tableColumnList.value.push(item);
     };
+    // 排序
     const rowList = computed(() => {
       return tableData.value.map((item) => {
         const _item = {};
@@ -70,7 +78,56 @@ export default defineComponent({
     };
     // 向子组件暴露tableColumnRegister 方法
     expose({ tableColumnRegister });
-    return () => (
+    const indeterminate = ref(false);
+    const checkAll = ref(false);
+    const checkboxGroup = ref<number[]>([]);
+    const checkAllChange = (value: boolean) => {
+      console.log("value", value);
+      checkboxGroup.value = value
+        ? new Array(tableData.value.length).fill("").map((item, index) => index)
+        : [];
+      indeterminate.value = false;
+    };
+    const groupChange = (value: any[]) => {
+      const checkedCount = value.length;
+      checkAll.value = checkedCount === tableData.value.length;
+      indeterminate.value =
+        checkedCount > 0 && checkedCount < tableData.value.length;
+    };
+    const calcTh = (item: TableColumnType) => {
+      switch (item.type) {
+        case "selection":
+          return (
+            <ZCheckbox
+              onChange={checkAllChange}
+              v-model={checkAll.value}
+              indeterminate={indeterminate.value}
+            ></ZCheckbox>
+          );
+        default:
+          if (item.sortable) {
+            return (
+              <div class="cell z-flex align-center">
+                <span>{item.label}</span>
+                <span class="caret-wrapper">
+                  <i class="sort-caret ascending"></i>
+                  <i class="sort-caret descending"></i>
+                </span>
+              </div>
+            );
+          }
+          return <div class="cell">{item.label}</div>;
+      }
+    };
+    const calcTd = (item: TableColumnType, value, index) => {
+      switch (item.type) {
+        case "selection":
+          return <ZCheckbox showLabel={false} label={index}></ZCheckbox>;
+        default:
+          return <div class="cell">{value}</div>;
+      }
+    };
+    const tableRender = computed(() => (
       <div
         ref={table}
         class={["z-table-wrapper", border.value && "z-table-border"]}
@@ -92,7 +149,7 @@ export default defineComponent({
                     left: item.fixed ? calcTotalLeft(index) + "px" : "",
                   }}
                 >
-                  <div class="cell">{item.label}</div>
+                  {calcTh(item)}
                 </th>
               ))}
             </tr>
@@ -116,11 +173,9 @@ export default defineComponent({
                           : "",
                       }}
                     >
-                      {tableColumnList.value[_index].slots.default ? (
-                        tableColumnList.value[_index].slots.default({ value })
-                      ) : (
-                        <div class="cell">{value}</div>
-                      )}
+                      {tableColumnList.value[_index].slots.default
+                        ? tableColumnList.value[_index].slots.default({ value })
+                        : calcTd(tableColumnList.value[_index], value, index)}
                     </td>
                   );
                 })}
@@ -130,7 +185,20 @@ export default defineComponent({
           {slots.default && slots.default()}
         </table>
       </div>
-    );
+    ));
+
+    return () => {
+      return tableColumnList.value.find(
+        (column) => column.type === "selection"
+      ) ? (
+        //@ts-ignore
+        <ZCheckboxGroup v-model={checkboxGroup.value} onChange={groupChange}>
+          {tableRender.value}
+        </ZCheckboxGroup>
+      ) : (
+        tableRender.value
+      );
+    };
   },
 });
 </script>

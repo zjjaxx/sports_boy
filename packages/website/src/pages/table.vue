@@ -51,6 +51,32 @@
       <ZTableColumn propKey="address" label="地址"></ZTableColumn>
     </ZTable>
   </ZRow>
+  <ZRow class="tab-wrapper">
+    <ZTable :tableData="tableData">
+      <ZTableColumn width="160" type="selection"></ZTableColumn>
+      <ZTableColumn width="160" propKey="date" label="时间"></ZTableColumn>
+      <ZTableColumn width="260" propKey="name" label="名字"></ZTableColumn>
+      <ZTableColumn propKey="address" label="地址"></ZTableColumn>
+    </ZTable>
+  </ZRow>
+  <ZRow class="tab-wrapper">
+    <ZTable :tableData="tableData">
+      <ZTableColumn
+        width="160"
+        propKey="date1"
+        label="时间1"
+        sortable
+      ></ZTableColumn>
+      <ZTableColumn
+        width="160"
+        propKey="date1"
+        label="时间2"
+        sortable
+      ></ZTableColumn>
+      <ZTableColumn width="260" propKey="name" label="名字"></ZTableColumn>
+      <ZTableColumn propKey="address" label="地址"></ZTableColumn>
+    </ZTable>
+  </ZRow>
 </template>
 <script setup lang="ts">
 const tableData = [

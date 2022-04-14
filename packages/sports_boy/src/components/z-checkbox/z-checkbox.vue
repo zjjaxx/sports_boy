@@ -19,7 +19,7 @@
     </span>
     <span :class="[modelValue && 'z-label-checked']">
       <slot>
-        <span>{{ label }}</span>
+        <span v-if="label && showLabel">{{ label }}</span>
       </slot>
     </span>
   </span>
@@ -29,14 +29,19 @@
 import { computed, getCurrentInstance, inject, Ref } from "vue";
 import { getParentByNameRecursive, deepClone } from "@/util/index";
 interface Props {
-  modelValue: boolean;
-  disabled: boolean;
+  modelValue?: boolean;
+  disabled?: boolean;
   // 选中状态的值（只有在checkbox-group或者绑定对象类型为array时有效）
-  label: string | number | boolean;
+  label?: string | number | boolean;
   // 表示 checkbox 的不确定状态，一般用于实现全选的效果
   indeterminate: boolean;
+  showLabel?: boolean;
 }
-const props = defineProps<Props>();
+const props = withDefaults(defineProps<Props>(), {
+  showLabel: true,
+  label: "",
+  indeterminate: undefined,
+});
 const emit = defineEmits(["update:modelValue", "change"]);
 const groupModelValue = inject<Ref<any[]>>("modelValue");
 const checkboxGroup = getParentByNameRecursive(
@@ -54,7 +59,8 @@ const modelValue = computed({
     }
   },
   set: (value) => {
-    if (groupModelValue && checkboxGroup) {
+    console.log("props.indeterminate", props.indeterminate);
+    if (groupModelValue && checkboxGroup && props.indeterminate === undefined) {
       if (groupModelValue.value.includes(props.label)) {
         const groupModelList = deepClone(groupModelValue.value);
         const index = groupModelValue.value.findIndex(
@@ -73,7 +79,8 @@ const modelValue = computed({
           props.label,
         ]);
       }
-    } else {
+    }
+    if (modelValue.value !== undefined) {
       emit("update:modelValue", value);
       emit("change", value);
     }
@@ -99,7 +106,7 @@ const calcDisabled = computed(() => {
         return true;
       }
     } else {
-      return false;
+      return props.disabled;
     }
   } else {
     return props.disabled;

@@ -6,6 +6,7 @@
     <ZCheckbox disabled v-model="flag1">备选项</ZCheckbox>
     <ZCheckbox disabled :modelValue="true">备选项</ZCheckbox>
   </ZRow>
+  {{ group }}
   <ZCheckboxGroup v-model="group">
     <ZCheckbox label="a">备选项</ZCheckbox>
     <ZCheckbox label="b">备选项</ZCheckbox>

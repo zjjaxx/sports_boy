@@ -1,5 +1,5 @@
 <template>
-  <div class="z-flex z-align-center">
+  <div>
     <slot></slot>
   </div>
 </template>
@@ -8,8 +8,8 @@
 import { provide, computed } from "vue";
 interface Props {
   modelValue: any[];
-  min: number | string;
-  max: number | string;
+  min?: number | string;
+  max?: number | string;
 }
 const props = defineProps<Props>();
 const emit = defineEmits(["update:modelValue", "change"]);

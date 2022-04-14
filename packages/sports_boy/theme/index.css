@@ -343,6 +343,32 @@
 .z-table .cell {
   padding: 10px;
 }
+.z-table .caret-wrapper {
+  align-items: center;
+  cursor: pointer;
+  display: inline-flex;
+  flex-direction: column;
+  height: 34px;
+  overflow: initial;
+  position: relative;
+  vertical-align: middle;
+  width: 24px;
+}
+.z-table .caret-wrapper .sort-caret {
+  border: 5px solid transparent;
+  height: 0;
+  left: 7px;
+  position: absolute;
+  width: 0;
+}
+.z-table .caret-wrapper .ascending {
+  border-bottom-color: #c0c4cc;
+  top: 5px;
+}
+.z-table .caret-wrapper .descending {
+  border-top-color: #c0c4cc;
+  bottom: 7px;
+}
 .z-table-border {
   border-bottom: 1px solid #ebeef5;
   border-left: 1px solid #ebeef5;
